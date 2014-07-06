@@ -1,0 +1,24 @@
+{
+  "name": "interactstudy",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "consolidate": "*",
+    "grunt": "~0.4.1",         
+    "grunt-contrib-watch": "~0.4.3", 
+    // "grunt-contrib-requirejs": "*", 
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-sass": "~0.4.0",
+    "grunt-includes": "~0.4.0",
+    "consolidate": "~0.10.0"
+  }
+}

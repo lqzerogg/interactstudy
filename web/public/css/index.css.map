@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK;EACJ,SAAS,EAAE,IAAI;;ACChB,CAAE;EACD,UAAU,EAAE,IAAI",
+"sources": ["../../module/sass/pagelet/a.scss","../../module/sass/page/index.scss"],
+"names": [],
+"file": "index.css"
+}
