@@ -1,5 +1,11 @@
-@import "a";
+@import "basic";
+@import "varable";
+@import "header";
+@import "searcher";
 
-a {
-	background: blue;
+$light-blue: rgb(207,224,234);
+
+.carridor {
+	background: $light-blue;
+	padding: 3rem 0;
 }

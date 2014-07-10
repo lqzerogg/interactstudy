@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title>互动教室</title>
+    <!-- meta data todo-->
+    <!-- meta data -->
     {{> lib_css}}
     <link rel='stylesheet' href='/css/index.css' />
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }} HELLO</p>
-    <P>ASDFASDFASF</P>
+
+    <div class="header-wrapper">      
+      {{> header}}
+    </div>
+    <div class="carridor">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            {{> searcher}}
+          </div>
+          <div class="col-md-8">
+            {{> carousel}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid recommander">
+      <div class="row">
+        <div class="col-md-10">
+          {{> item_list}}
+        </div>
+        <div class="col-md-2">
+          {{> ranking_list}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <img src="XXX" alt="banner" class="banner">
+          <span class="discription">精彩主题讨论</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid organization">
+      <div class="row">
+        <div class="col-md-10">
+          {{> item_list}}
+        </div>
+        <div class="col-md-2">
+          {{> ranking_list}}
+        </div>
+      </div>
+    </div>
+
+    {{> footer}}
 
     {{> lib_js}}
     <script type="text/javascript" src="/js/index.js"></script>

@@ -1,0 +1,47 @@
+@import "varable";
+
+
+.searcher {
+	border: 4px solid $main-color;
+	border-radius: 3px;
+	background-color: $white-color;
+	font-size: $small-font;
+
+	.nav-tabs {		
+		&:hover {
+			border: none;
+		}
+		& > li {
+			width: 25%;
+			text-align: center;			
+			& > a {	
+				padding: 1.25rem 0;
+			}
+		}		
+	}
+	.tab-pane {		
+		padding: 10%;
+		.search-text {
+			height: 4rem;
+			padding: 1rem;
+			color: #428bca;
+			width: 100%;
+			margin-bottom: 1.5rem;
+		}
+		.new-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			margin-top: 1.5rem;
+		}
+		.new-item {
+			display: inline-block;
+			margin: .1rem;
+			font-size: $xs-font;
+		}
+		.caption {
+			color: $main-color;
+		}
+	}
+	
+}

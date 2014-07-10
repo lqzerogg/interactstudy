@@ -1,0 +1,36 @@
+@import "varable";
+$light-grey-color: rgb(228,228,228);
+
+body {
+	background: $white-color;
+}
+.header-wrapper {
+	background: $grey-color;
+}
+
+.container-fluid {
+	min-width: 80rem;
+	max-width: 100rem;
+	margin: auto;
+}
+
+.nav-main li {
+	display: inline-block;
+	font-size: $medium-font;
+}
+.nav-tabs {
+	border: none;
+	&:hover {
+		border: none;
+	}
+	& > li {
+		& > a {	
+			border-top: none !important;			
+			border-bottom: none !important;
+			border-right: 1px solid $light-grey-color;
+		}
+	}
+	background: $grey-color;
+	border-radius: 0;
+	margin-right: 0;
+}

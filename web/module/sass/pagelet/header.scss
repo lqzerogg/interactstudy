@@ -1,0 +1,79 @@
+@import "varable";
+
+body:before {
+	content: " ";
+	height: .5rem;
+	display: block;
+	background-color: $sub-color;
+}
+.header {
+	margin-top: 1rem;
+	a {
+		color: $black-font;
+	}
+	.logo-wrapper {
+
+		.logo {
+			display: inline-block;
+			vertical-align: top;
+		}
+		a {
+			display: block;
+			text-decoration: none;			
+		}
+		.text {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.text span {
+			display: block;
+		}
+		.word {
+			font-size: $large-font;
+			font-weight: bold;
+		}
+		.url {
+			position: relative;
+			top: -1rem;
+		}
+	}
+	.nav-wrapper {
+		margin-top: .5rem;
+		li {
+			a {
+				padding-left: .8rem;
+				padding-right: .8rem;
+			}
+
+			&.active:before {
+				content: " ";
+				display: block;
+				background: url(/img/nav_active.png) no-repeat;
+				height: 1rem;
+				position: absolute;
+				width: 100%;
+				top: -2rem;
+			}
+		}
+	}		
+	.login-wrapper {
+		margin-top: .5rem;
+		text-align: right;
+
+		span {
+			margin: 1rem 0;
+			font-size: 1.8rem;
+			padding: 0 1rem;		
+		}
+		.glyphicon {
+			color: $main-color;
+			margin-right: 1rem;
+		}
+		.register {
+			border-left: 1px solid $grey-border-color;
+		}
+		.login, .register {
+			cursor: pointer;
+		}
+	}
+}
