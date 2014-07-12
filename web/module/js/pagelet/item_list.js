@@ -6,7 +6,7 @@ jQuery(function($) {
 	var TPL = {
 		itemTpl: ['{{~it.datas :v:i}}',
 					'<li class="item">',
-						'<div class="image-wrapper">',
+						'<a class="image-wrapper" href="{{=v.link}}">',
 							'<img src="{{=v.src}}" alt="{{=v.name}}">',
 							'<div class="name clearfix">',
 								'<span class="text">{{=v.name}}</span>',
@@ -15,7 +15,7 @@ jQuery(function($) {
 									'<div class="star-black"></div>',
 								'</div>',
 							'</div>',
-						'</div>',
+						'</a>',
 						'<div class="desc">',
 							'<p class="teacher">授课老师：{{=v.teacher}}</p>',
 							'<p class="stu-num">报名人数：<span>{{=v.number}}</span>人</p>',
@@ -42,7 +42,8 @@ jQuery(function($) {
 				src: '/img/test_img.png',
 				name: '梵高教你星夜' + i,
 				teacher: '黄小雄' + i,
-				number: Math.floor(23333 / (i + 1))
+				number: Math.floor(23333 / (i + 1)),
+				link: '#'
 			});
 		}
 
