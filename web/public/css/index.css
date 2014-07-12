@@ -3,7 +3,8 @@
  * 基本样式
  */
 body {
-  background: white; }
+  background: white;
+  font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 ol, ul {
   list-style: none;
@@ -214,12 +215,14 @@ body:before {
         width: 39px; }
       .item-list .list .image-wrapper .name .stars-4 .star-yellow:after {
         width: 52px; }
-  .item-list .list .desc .teacher {
-    margin: 10px 0 3px; }
-  .item-list .list .desc .stu-num {
-    margin: 0; }
-    .item-list .list .desc .stu-num span {
-      color: #f98604; }
+  .item-list .list .desc {
+    font-family: "宋体"; }
+    .item-list .list .desc .teacher {
+      margin: 10px 0 3px; }
+    .item-list .list .desc .stu-num {
+      margin: 0; }
+      .item-list .list .desc .stu-num span {
+        color: #f98604; }
 
 .ranking-list .caption {
   font-size: 21px;
@@ -228,7 +231,8 @@ body:before {
   border-bottom: 2px solid #f98604; }
 .ranking-list .list {
   margin-top: 15px;
-  font-size: 13px; }
+  font-size: 13px;
+  font-family: "宋体"; }
   .ranking-list .list li {
     padding: 6px 0;
     border-bottom: 1px dotted #919191; }
