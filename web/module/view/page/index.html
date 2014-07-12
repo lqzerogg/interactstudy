@@ -9,9 +9,8 @@
   </head>
   <body>
 
-    <div class="header-wrapper">      
-      {{> header}}
-    </div>
+    {{> header}}
+
     <div class="carridor">
       <div class="container-fluid">
         <div class="row">
@@ -36,19 +35,21 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <img src="XXX" alt="banner" class="banner">
-          <span class="discription">精彩主题讨论</span>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojNTU1O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+" alt="banner" class="banner">
         </div>
       </div>
     </div>
 
-    <div class="container-fluid organization">
-      <div class="row">
-        <div class="col-md-10">
-          {{> item_list}}
-        </div>
-        <div class="col-md-2">
-          {{> ranking_list}}
+    <div class="organization">
+      
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10">
+            {{> item_list}}
+          </div>
+          <div class="col-md-2">
+            {{> ranking_list}}
+          </div>
         </div>
       </div>
     </div>

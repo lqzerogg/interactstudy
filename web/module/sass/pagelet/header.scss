@@ -14,15 +14,16 @@ body:before {
 	.logo-wrapper {
 
 		.logo {
-			display: inline-block;
-			vertical-align: top;
+			float: left;
+			width: 60px * $size-unit;
+			margin-right: 5px * $size-unit;		
 		}
 		a {
 			display: block;
 			text-decoration: none;			
 		}
 		.text {
-			display: inline-block;
+			display: block;
 			vertical-align: top;
 		}
 		.text span {
@@ -48,8 +49,7 @@ body:before {
 				color: $main-color;
 			}
 
-			&.active:before {
-				content: " ";
+			&.active .active-top {
 				display: block;
 				background: url(/img/nav_active.png) no-repeat;
 				height: 12px * $size-unit;
@@ -72,6 +72,7 @@ body:before {
 		.glyphicon {
 			color: $main-color;
 			margin-right: 12px * $size-unit;
+			padding-top: 2px * $size-unit;;
 		}
 		.register {
 			border-left: 1px solid $grey-border-color;

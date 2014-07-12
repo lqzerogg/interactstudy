@@ -2,5 +2,3 @@
 //         console.log('bbbbbbb');
 //    }
 // );
-
-console.log('bbbbbbbb');

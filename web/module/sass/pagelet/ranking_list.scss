@@ -14,6 +14,9 @@
 		li {
 			padding: 6px 0;
 			border-bottom: 1px dotted $grey-border-color;
+			&:last-child {
+				border-bottom: none;
+			}
 		}
 
 		.num {
@@ -24,7 +27,8 @@
 	}
 	.category {
 		h3 {
-			font-size: $small-font;			
+			font-size: $small-font;		
+			margin-bottom: 12px;	
 			a.more {
 				font-size: $default-font;
 				float: right;

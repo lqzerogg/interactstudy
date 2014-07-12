@@ -42,6 +42,7 @@
 	}
 	.list {
 		margin-top: 15px * $size-unit;
+		margin-bottom: 0;
 		.item {
 			float: left;
 			width: 22.5%;
@@ -70,22 +71,26 @@
 				}
 
 				.stars {
-					float: left;
+					float: right;
 					position: relative;
-
-					span:after {
-						content: "\e006 \e006 \e006 \e006 \e006";
-						font-family: "Glyphicons Halflings";
-						position: absolute;
-						overflow: hidden;
+					div {
 						display: block;
 					}
+					div:after {
+						content: "\e006 \e006 \e006 \e006 \e006";
+						font-family: "Glyphicons Halflings";
+						position: relative;
+						overflow: hidden;
+						display: block;
+						height: 20px * $size-unit;
+					}
 					.star-yellow:after {
-						color: rgb(255,220,0);
+						color: $yellow-color;
 						z-index: 1;
 					}
 					.star-black:after {
 						color: rgb(214,212,217);
+						margin-top: -20px;
 					}
 				}
 				@for $i from 1 to 5 {

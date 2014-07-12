@@ -22,15 +22,16 @@ ol, ul {
  */
 .container-fluid {
 	min-width: 1000px * $size-unit;
-	max-width: 1200px * $size-unit;
+	max-width: 1240px * $size-unit;
 	margin: auto;
-	padding: 0 15px * $size-unit;
+	padding: 0 20px * $size-unit;
 }
 /*
 导航样式
  */
 .nav-main li {
-	display: inline-block;
+	display: block;
+	float: left;
 	font-size: $medium-font;
 	font-weight: bold;
 }

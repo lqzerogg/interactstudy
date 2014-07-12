@@ -1,0 +1,99 @@
+@import "varable";
+
+.footer {
+	$banner-red: rgb(208,10,46);
+	$word-yellow: rgb(233,218,189);
+	.caption {
+		font-size: 21px * $size-unit;
+		text-align: center;
+	}
+	.banner {
+		height: 90px * $size-unit;
+		background: $banner-red;
+		color: $word-yellow;
+		margin: 20px * $size-unit auto;
+		font-size: $large-font;
+		position: relative;
+		font-weight: bold;
+
+		.desc {
+			margin-left: 140px * $size-unit;
+			span {
+				display: block;
+				float: left;
+				padding-top: 31px * $size-unit;			
+			}
+			.num {
+				font-size: 40px * $size-unit;
+				padding: 16px * $size-unit 58px * $size-unit 17px * $size-unit 40px * $size-unit;
+				background: url(/img/num_log.png) no-repeat;
+				letter-spacing: 5px * $size-unit;
+			}
+		}
+		.contact-us {
+			position: absolute;
+			right: 13px * $size-unit;
+			line-height: 60px * $size-unit;
+			background: $yellow-color;
+			border-radius: 3px;
+			top: 15px * $size-unit;
+			padding: 0 80px * $size-unit 0 35px * $size-unit;
+			color: $banner-red;
+
+			.glyphicon.glyphicon-chevron-right {
+				border: 1px solid $banner-red;
+				border-radius: 33px * $size-unit;
+				background: $banner-red;
+				color: $yellow-color;
+				display: block;
+				position: absolute;
+				right: 20px * $size-unit;
+				top: 14px * $size-unit;
+				height: 30px * $size-unit;
+				width: 30px * $size-unit;
+				padding: 3px * $size-unit 0 0 3px * $size-unit;
+			}
+		}
+	}
+
+	.list {
+		width: 101.7%;
+
+		li {
+			float: left;
+			width: 15%;
+			max-height: 100%;
+			margin-right: 1.66%;
+			margin-bottom: 1.66%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.footer-text {
+		position: relative;
+		margin-bottom: 20px * $size-unit;
+		p {
+			margin: 0;
+			color: $grey-font;
+			font-size: $xxs-font;
+		}
+		.copyright {
+			padding-top: 15px * $size-unit;
+			border-top: 1px dotted;
+		}
+		.links {
+			position: absolute;
+			top: 18px * $size-unit;
+			right: 15px * $size-unit;
+			.link:after {
+				content: "-";
+				margin: 0 1px * $size-unit 0 3px * $size-unit;
+				color: $grey-color;
+			}
+		}
+		
+	}
+
+}

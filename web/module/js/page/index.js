@@ -1,11 +1,5 @@
-// define(['require', 'pagelet/a'], function(require) {    
-//     require('jquery');
-// });
-
-{{> a}}
-
-{{> b}}
+{{> item_list}}
 
 jQuery(function($) {
-	console.log('tasking');	
+	$.interact = $.interact || {};
 });
