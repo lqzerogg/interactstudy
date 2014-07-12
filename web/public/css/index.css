@@ -150,6 +150,9 @@ body:before {
     float: left;
     padding: 0 15px;
     border-right: 1px solid #919191; }
+    .item-list .category .c-item:hover a {
+      background-color: #f0f0f0;
+      border-radius: 3px; }
     .item-list .category .c-item.active a {
       background-color: #f98604;
       border-radius: 3px;
@@ -182,7 +185,8 @@ body:before {
         width: 50%;
         display: block;
         text-overflow: ellipsis;
-        float: left; }
+        float: left;
+        white-space: pre; }
       .item-list .list .image-wrapper .name .stars {
         float: right;
         position: relative; }

@@ -23,7 +23,13 @@
 			float: left;
 			padding: 0 15px * $size-unit;
 			border-right: 1px solid $grey-border-color;
-
+			
+			&:hover {
+				a {
+					background-color: $grey-color;
+					border-radius: 3px;					
+				}
+			}
 			&.active {
 				a {
 					background-color: #f98604;
@@ -31,6 +37,7 @@
 					color: $white-color;
 				}
 			}
+			
 			&:last-child {
 				border-right: none;
 			}
@@ -68,6 +75,7 @@
 					display: block;
 					text-overflow: ellipsis;
 					float: left;				
+					white-space: pre;
 				}
 
 				.stars {

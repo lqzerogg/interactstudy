@@ -19,6 +19,8 @@
     "grunt-contrib-concat": "*",
     "grunt-contrib-sass": "~0.4.0",
     "grunt-includes": "~0.4.0",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-copy": "*",
     "consolidate": "~0.10.0"
   }
 }

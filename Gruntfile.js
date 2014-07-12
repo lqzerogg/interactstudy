@@ -3,6 +3,9 @@ module.exports = function(grunt) {      // Project configuration.
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-includes');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     // grunt.loadNpmTasks('grunt-contrib-requirejs');
 
 
@@ -19,7 +22,13 @@ module.exports = function(grunt) {      // Project configuration.
             tplPath: "web/module/view/",
             pagePath: "web/view/",
             jsModPath: 'web/module/js/',
-            jsPath: 'web/public/js/'
+            jsPath: 'web/public/js/',
+            pubPath: 'web/public',
+            proCss: 'production/web/public/css/',
+            proJs: 'production/web/public/js/',
+            proPublic: 'production/web/public/',
+            proPage: 'production/web/view/',
+            proPath: 'production/',
         },          
         // banner
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -110,6 +119,47 @@ module.exports = function(grunt) {      // Project configuration.
                 }
             }
         },
+
+        uglify: {
+            index: {
+              options: {
+                sourceMap: true,
+                sourceMapName: '<%= meta.proJs %>index.map'
+              },
+              files: {
+                '<%= meta.proJs %>index.js': ['<%= meta.jsPath %>index.js']
+              }
+            },
+            lib: {
+              options: {
+                sourceMap: true,
+                sourceMapName: '<%= meta.proJs %>lib/lib.map'
+              },
+              files: {
+                '<%= meta.proJs %>lib/bootstrap.js': ['<%= meta.jsPath %>lib/bootstrap.js'],
+                '<%= meta.proJs %>lib/doT.js': ['<%= meta.jsPath %>lib/doT.js'],
+                '<%= meta.proJs %>lib/jquery.js': ['<%= meta.jsPath %>lib/jquery.js'],
+                '<%= meta.proJs %>lib/modernizr.js': ['<%= meta.jsPath %>lib/modernizr.js'],
+                '<%= meta.proJs %>lib/require.js': ['<%= meta.jsPath %>lib/require.js']
+              }
+            }
+        },
+        copy: {
+          main: {
+            files: [
+                {expand: true, src: ['web/**/*', 'web/***/*'], dest: 'production/'}
+                // {expand: true, src: ['<%= meta.jsPath %>lib/*'], dest: '<%= meta.proJs %>lib/'},
+                // {expand: true, src: ['<%= meta.cssPath %>*'], dest: '<%= meta.proCss %>/'},
+                // {expand: true, src: ['<%= meta.cssPath %>lib/*'], dest: '<%= meta.proCss %>lib/'},
+                // {expand: true, src: ['<%= meta.pagePath %>*'], dest: '<%= meta.proPage %>/'},
+                // {expand: true, src: ['<%= meta.pubPath %>img/*'], dest: '<%= meta.proPublic %>img/'},
+                // {expand: true, src: ['<%= meta.pubPath %>fonts/*'], dest: '<%= meta.proPublic %>fonts/'}
+                
+            ]
+            
+          },
+        },
+        
 
         //requirejs
         // requirejs: {
