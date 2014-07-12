@@ -1,13 +1,21 @@
-$main-color: rgb(251,77,7);
+$rem-to-px: 12px/1rem;
+$px-to-rem: 1rem/12px;
+$size-unit: 1;
+
+$main-color: rgb(249,134,4);
 $sub-color: rgb(53,53,53);
 $grey-color: rgb(240,240,240);
 $white-color: rgb(255,255,255);
 $grey-border-color: rgb(145,145,145);
 
 $black-font: #333;
+$grey-font: rgb(148,148,148);
 
-$large-font: 3.5rem;
-$medium-font: 1.8rem;
-$small-font: 1.4rem;
-$xs-font: 1.4rem;
+$xl-font: 36px * $size-unit;
+$large-font: 21px * $size-unit;
+$medium-font: 18px * $size-unit;
+$small-font: 16px * $size-unit;
+$xs-font: 14px * $size-unit;
+$xxs-font: 12px * $size-unit;
+$default-font: 13px * $size-unit;
 

@@ -1,0 +1,110 @@
+@import "varable";
+
+@mixin stars-count($num) {
+	.stars-#{$num} {
+		.star-yellow:after {
+			width: 13px * $num;
+		}
+	}
+}
+
+.item-list {
+	.caption {
+		font-size: $medium-font;
+		font-weight: bold;
+		float: left;
+	}
+	.category {
+		float: left;
+		padding: 3px * $size-unit 0;
+		margin-left: 15px * $size-unit;
+
+		.c-item {
+			float: left;
+			padding: 0 15px * $size-unit;
+			border-right: 1px solid $grey-border-color;
+
+			&.active {
+				a {
+					background-color: #f98604;
+					border-radius: 3px;
+					color: $white-color;
+				}
+			}
+			&:last-child {
+				border-right: none;
+			}
+
+			a {
+				padding: 3px * $size-unit 10px * $size-unit;
+			}
+		}
+	}
+	.list {
+		margin-top: 15px * $size-unit;
+		.item {
+			float: left;
+			width: 22.5%;
+			margin-right: 1.7%;
+			margin-bottom: 40px * $size-unit;
+		}
+		.image-wrapper {
+			position: relative;
+			img {
+				width: 100%;
+				height: 130px * $size-unit;
+			}
+			.name {
+				position: absolute;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.3);
+				width: 100%;
+				color: $white-color;
+				padding: 3px * $size-unit 10px * $size-unit;
+
+				.text {
+					width: 50%;
+					display: block;
+					text-overflow: ellipsis;
+					float: left;				
+				}
+
+				.stars {
+					float: left;
+					position: relative;
+
+					span:after {
+						content: "\e006 \e006 \e006 \e006 \e006";
+						font-family: "Glyphicons Halflings";
+						position: absolute;
+						overflow: hidden;
+						display: block;
+					}
+					.star-yellow:after {
+						color: rgb(255,220,0);
+						z-index: 1;
+					}
+					.star-black:after {
+						color: rgb(214,212,217);
+					}
+				}
+				@for $i from 1 to 5 {
+					@include stars-count($i);
+				}
+
+				
+			}
+		}
+		.desc {
+			.teacher {
+				margin: 10px * $size-unit 0 3px * $size-unit;
+			}
+			.stu-num {
+				margin: 0;
+				span {
+					color: $main-color;
+				}
+			}
+		}
+	}
+}

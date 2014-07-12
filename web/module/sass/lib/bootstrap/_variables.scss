@@ -18,7 +18,7 @@ $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 // Brand colors
 // -------------------------
 
-$brand-primary:         #428bca !default;
+$brand-primary:         rgb(249,134,4) !default;
 $brand-success:         #5cb85c !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
@@ -33,7 +33,7 @@ $text-color:            $gray-dark !default;
 // Links
 // -------------------------
 
-$link-color:            $brand-primary !default;
+$link-color:            #428bca !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 
 // Typography
@@ -579,8 +579,9 @@ $carousel-control-width:                      15% !default;
 $carousel-control-opacity:                    .5 !default;
 $carousel-control-font-size:                  20px !default;
 
-$carousel-indicator-active-bg:                #fff !default;
-$carousel-indicator-border-color:             #fff !default;
+$carousel-indicator-active-bg:                $brand-primary !default;
+$carousel-indicator-bg:   		              rgb(60,68,71) !default;
+$carousel-indicator-border-color:             $brand-primary !default;
 
 $carousel-caption-color:                      #fff !default;
 

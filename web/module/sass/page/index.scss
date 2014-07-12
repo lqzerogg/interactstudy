@@ -2,10 +2,25 @@
 @import "varable";
 @import "header";
 @import "searcher";
+@import "carousel";
+@import "item_list";
+@import "ranking_list";
 
 $light-blue: rgb(207,224,234);
 
 .carridor {
 	background: $light-blue;
-	padding: 3rem 0;
+}
+.searcher {
+	margin: 48px * $size-unit 0 0;
+}
+.recommander {
+	margin-top: 24px * $size-unit;
+}
+.item-list {
+	width: 93%;
+}
+.ranking-list {
+	width: 137%;
+	margin-left: -48%;
 }

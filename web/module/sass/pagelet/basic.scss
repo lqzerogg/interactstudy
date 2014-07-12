@@ -1,36 +1,53 @@
 @import "varable";
+@import "mixins";
 $light-grey-color: rgb(228,228,228);
-
+/**
+ * 基本样式
+ */
 body {
 	background: $white-color;
 }
+ol, ul {
+	list-style: none;
+	padding: 0;	
+}
+/**
+ * 头部样式
+ */
 .header-wrapper {
 	background: $grey-color;
 }
-
+/*
+栅格样式
+ */
 .container-fluid {
-	min-width: 80rem;
-	max-width: 100rem;
+	min-width: 1000px * $size-unit;
+	max-width: 1200px * $size-unit;
 	margin: auto;
+	padding: 0 15px * $size-unit;
 }
-
+/*
+导航样式
+ */
 .nav-main li {
 	display: inline-block;
 	font-size: $medium-font;
+	font-weight: bold;
 }
-.nav-tabs {
-	border: none;
-	&:hover {
-		border: none;
-	}
+.nav-tab {	
+		
 	& > li {
-		& > a {	
-			border-top: none !important;			
-			border-bottom: none !important;
-			border-right: 1px solid $light-grey-color;
+		float: left;
+		&.active a{
+			background: $white-color;
 		}
-	}
-	background: $grey-color;
-	border-radius: 0;
+		a {					
+			border-right: 1px solid $light-grey-color;
+			background: $grey-color;
+			&.last-child {
+				border-right: none;
+			}
+		}
+	}		
 	margin-right: 0;
 }

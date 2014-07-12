@@ -1,38 +1,57 @@
+@charset "UTF-8";
+/**
+ * 基本样式
+ */
 body {
   background: white; }
 
+ol, ul {
+  list-style: none;
+  padding: 0; }
+
+/**
+ * 头部样式
+ */
 .header-wrapper {
   background: #f0f0f0; }
 
+/*
+栅格样式
+ */
 .container-fluid {
-  min-width: 80rem;
-  max-width: 100rem;
-  margin: auto; }
+  min-width: 1000px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px; }
 
+/*
+导航样式
+ */
 .nav-main li {
   display: inline-block;
-  font-size: 1.8rem; }
+  font-size: 18px;
+  font-weight: bold; }
 
-.nav-tabs {
-  border: none;
-  background: #f0f0f0;
-  border-radius: 0;
+.nav-tab {
   margin-right: 0; }
-  .nav-tabs:hover {
-    border: none; }
-  .nav-tabs > li > a {
-    border-top: none !important;
-    border-bottom: none !important;
-    border-right: 1px solid #e4e4e4; }
+  .nav-tab > li {
+    float: left; }
+    .nav-tab > li.active a {
+      background: white; }
+    .nav-tab > li a {
+      border-right: 1px solid #e4e4e4;
+      background: #f0f0f0; }
+      .nav-tab > li a.last-child {
+        border-right: none; }
 
 body:before {
   content: " ";
-  height: .5rem;
+  height: 6px;
   display: block;
   background-color: #353535; }
 
 .header {
-  margin-top: 1rem; }
+  padding-top: 12px; }
   .header a {
     color: #333333; }
   .header .logo-wrapper .logo {
@@ -47,73 +66,191 @@ body:before {
   .header .logo-wrapper .text span {
     display: block; }
   .header .logo-wrapper .word {
-    font-size: 3.5rem;
+    font-size: 36px;
     font-weight: bold; }
   .header .logo-wrapper .url {
     position: relative;
-    top: -1rem; }
+    top: -12px; }
   .header .nav-wrapper {
-    margin-top: .5rem; }
+    margin-top: 6px; }
     .header .nav-wrapper li a {
-      padding-left: .8rem;
-      padding-right: .8rem; }
+      padding-left: 9.6px;
+      padding-right: 9.6px; }
+    .header .nav-wrapper li.active a {
+      color: #f98604; }
     .header .nav-wrapper li.active:before {
       content: " ";
       display: block;
       background: url(/img/nav_active.png) no-repeat;
-      height: 1rem;
+      height: 12px;
       position: absolute;
       width: 100%;
-      top: -2rem; }
+      top: -24px; }
   .header .login-wrapper {
-    margin-top: .5rem;
+    margin-top: 6px;
     text-align: right; }
     .header .login-wrapper span {
-      margin: 1rem 0;
-      font-size: 1.8rem;
-      padding: 0 1rem; }
+      margin: 12px 0;
+      font-size: 18px;
+      padding: 0 5%;
+      float: right; }
     .header .login-wrapper .glyphicon {
-      color: #fb4d07;
-      margin-right: 1rem; }
+      color: #f98604;
+      margin-right: 12px; }
     .header .login-wrapper .register {
       border-left: 1px solid #919191; }
     .header .login-wrapper .login, .header .login-wrapper .register {
       cursor: pointer; }
 
 .searcher {
-  border: 4px solid #fb4d07;
+  border: 4px solid #f98604;
   border-radius: 3px;
   background-color: white;
-  font-size: 1.4rem; }
-  .searcher .nav-tabs:hover {
-    border: none; }
-  .searcher .nav-tabs > li {
+  font-size: 16px; }
+  .searcher .nav-tab > li {
     width: 25%;
     text-align: center; }
-    .searcher .nav-tabs > li > a {
-      padding: 1.25rem 0; }
+    .searcher .nav-tab > li > a {
+      padding: 15px 0; }
   .searcher .tab-pane {
-    padding: 10%; }
+    padding: 10% 8% 3%; }
     .searcher .tab-pane .search-text {
-      height: 4rem;
-      padding: 1rem;
+      height: 48px;
+      padding: 12px;
       color: #428bca;
       width: 100%;
-      margin-bottom: 1.5rem; }
+      margin-bottom: 18px; }
     .searcher .tab-pane .new-list {
       list-style: none;
       margin: 0;
       padding: 0;
-      margin-top: 1.5rem; }
+      margin-top: 18px; }
     .searcher .tab-pane .new-item {
       display: inline-block;
-      margin: .1rem;
-      font-size: 1.4rem; }
+      margin: 1.2px;
+      font-size: 14px; }
     .searcher .tab-pane .caption {
-      color: #fb4d07; }
+      color: #f98604; }
+
+.carousel .item img {
+  height: 350px;
+  max-width: 100%; }
+
+.item-list .caption {
+  font-size: 18px;
+  font-weight: bold;
+  float: left; }
+.item-list .category {
+  float: left;
+  padding: 3px 0;
+  margin-left: 15px; }
+  .item-list .category .c-item {
+    float: left;
+    padding: 0 15px;
+    border-right: 1px solid #919191; }
+    .item-list .category .c-item.active a {
+      background-color: #f98604;
+      border-radius: 3px;
+      color: white; }
+    .item-list .category .c-item:last-child {
+      border-right: none; }
+    .item-list .category .c-item a {
+      padding: 3px 10px; }
+.item-list .list {
+  margin-top: 15px; }
+  .item-list .list .item {
+    float: left;
+    width: 22.5%;
+    margin-right: 1.7%;
+    margin-bottom: 40px; }
+  .item-list .list .image-wrapper {
+    position: relative; }
+    .item-list .list .image-wrapper img {
+      width: 100%;
+      height: 130px; }
+    .item-list .list .image-wrapper .name {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      color: white;
+      padding: 3px 10px; }
+      .item-list .list .image-wrapper .name .text {
+        width: 50%;
+        display: block;
+        text-overflow: ellipsis;
+        float: left; }
+      .item-list .list .image-wrapper .name .stars {
+        float: left;
+        position: relative; }
+        .item-list .list .image-wrapper .name .stars span:after {
+          content: "\e006 \e006 \e006 \e006 \e006";
+          font-family: "Glyphicons Halflings";
+          position: absolute;
+          overflow: hidden;
+          display: block; }
+        .item-list .list .image-wrapper .name .stars .star-yellow:after {
+          color: #ffdc00;
+          z-index: 1; }
+        .item-list .list .image-wrapper .name .stars .star-black:after {
+          color: #d6d4d9; }
+      .item-list .list .image-wrapper .name .stars-1 .star-yellow:after {
+        width: 13px; }
+      .item-list .list .image-wrapper .name .stars-2 .star-yellow:after {
+        width: 26px; }
+      .item-list .list .image-wrapper .name .stars-3 .star-yellow:after {
+        width: 39px; }
+      .item-list .list .image-wrapper .name .stars-4 .star-yellow:after {
+        width: 52px; }
+  .item-list .list .desc .teacher {
+    margin: 10px 0 3px; }
+  .item-list .list .desc .stu-num {
+    margin: 0; }
+    .item-list .list .desc .stu-num span {
+      color: #f98604; }
+
+.ranking-list .caption {
+  font-size: 21px;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f98604; }
+.ranking-list .list {
+  margin-top: 15px;
+  font-size: 13px; }
+  .ranking-list .list li {
+    padding: 6px 0;
+    border-bottom: 1px dotted #919191; }
+  .ranking-list .list .num {
+    font-size: 12px;
+    color: #949494;
+    float: right; }
+.ranking-list .category h3 {
+  font-size: 16px; }
+  .ranking-list .category h3 a.more {
+    font-size: 13px;
+    float: right;
+    margin-top: 3px; }
+.ranking-list .category .c-list {
+  line-height: 23px; }
+.ranking-list .category li {
+  display: inline;
+  margin-right: 20px;
+  white-space: nowrap; }
 
 .carridor {
-  background: #cfe0ea;
-  padding: 3rem 0; }
+  background: #cfe0ea; }
+
+.searcher {
+  margin: 48px 0 0; }
+
+.recommander {
+  margin-top: 24px; }
+
+.item-list {
+  width: 93%; }
+
+.ranking-list {
+  width: 137%;
+  margin-left: -48%; }
 
 /*# sourceMappingURL=index.css.map */
