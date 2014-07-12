@@ -39,7 +39,7 @@ jQuery(function($) {
 
 		while(i-- > 0) {
 			obj.datas.push({
-				src: '/img/test_img.png',
+				src: 'http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg',
 				name: '梵高教你星夜' + i,
 				teacher: '黄小雄' + i,
 				number: Math.floor(23333 / (i + 1)),
