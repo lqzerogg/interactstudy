@@ -1,6 +1,6 @@
 /.sass-cache/
 *.DS_Store
-*/*.map
+*.map
 */*/.DS_Store
 *~
 *.log
