@@ -30,6 +30,9 @@
 		h3 {
 			font-size: $small-font;		
 			margin-bottom: 12px;	
+			span {
+				float: left;
+			}
 			a.more {
 				font-size: $default-font;
 				float: right;

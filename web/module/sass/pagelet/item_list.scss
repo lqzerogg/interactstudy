@@ -1,4 +1,5 @@
 @import "varable";
+@import "mixins";
 
 @mixin stars-count($num) {
 	.stars-#{$num} {
@@ -66,9 +67,11 @@
 			.name {
 				position: absolute;
 				bottom: 0;
-				background: rgba(0, 0, 0, 0.3);
-				width: 100%;
-				color: $white-color;
+				left: 0;
+				box-sizing: border-box;
+				@include transparent(#000, 0.3);
+				
+				width: 100%;				
 				padding: 3px * $size-unit 10px * $size-unit;
 
 				.text {
@@ -77,15 +80,17 @@
 					text-overflow: ellipsis;
 					float: left;				
 					white-space: pre;
+					color: $white-color;
 				}
 
 				.stars {
 					float: right;
+					display: block;
 					position: relative;
-					div {
+					span {
 						display: block;
 					}
-					div:after {
+					span:after {
 						content: "\e006 \e006 \e006 \e006 \e006";
 						font-family: "Glyphicons Halflings";
 						position: relative;
@@ -96,10 +101,10 @@
 					.star-yellow:after {
 						color: $yellow-color;
 						z-index: 1;
+						margin-top: -20px;
 					}
 					.star-black:after {
-						color: rgb(214,212,217);
-						margin-top: -20px;
+						color: rgb(214,212,217);						
 					}
 				}
 				@for $i from 1 to 5 {

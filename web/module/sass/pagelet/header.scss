@@ -1,12 +1,12 @@
 @import "varable";
 
-body:before {
-	content: " ";
+.top-style {
 	height: 6px * $size-unit;
-	display: block;
 	background-color: $sub-color;
 }
-.header {
+
+.header {	
+
 	padding-top: 12px * $size-unit;
 	a {
 		color: $black-font;

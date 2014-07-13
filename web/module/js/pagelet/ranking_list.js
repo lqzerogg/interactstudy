@@ -21,14 +21,22 @@ jQuery(function($) {
 
 		$(this).find('.caption').text(options.caption);
 
-		$(this).find('.r-list').append(rItemTpl({
-			datas: options.rankingList
-		}));
+		$.get(options.dataUrl, function(json) {
+			$(this).find('.r-list').append(rItemTpl({
+				datas: json.rankingDatas
+			})).end().find('.c-list').append(cItemTpl({
+				datas: json.categories
+			}));	;			
+		}.bind(this));
+
+		// $(this).find('.r-list').append(rItemTpl({
+		// 	datas: options.rankingList
+		// }));
 
 
-		$(this).find('.c-list').append(cItemTpl({
-			datas: options.cList
-		}));
+		// $(this).find('.c-list').append(cItemTpl({
+		// 	datas: options.cList
+		// }));
 
 		return this;
 	}

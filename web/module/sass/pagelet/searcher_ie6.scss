@@ -1,0 +1,17 @@
+@import "varable";
+
+.searcher {
+	.tab-pane {		
+
+		.search-text {
+			display: block;
+			padding: 0;
+			padding-top: 10px * $size-unit;
+			padding-bottom: 10px * $size-unit;
+			padding-left: 10px * $size-unit;
+			padding-right: 10px * $size-unit;
+			width: 220px * $size-unit;
+			height: 20px * $size-unit;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+@import "varable";
+@import "carousel_ie6";
+@import "searcher_ie6";
+
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+.list, .c-list, .r-list {
+	margin-left: 0;
+}
+.item-list {
+	.list {
+		margin-bottom: 40px * $size-unit;		
+		.image-wrapper .name {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+.ranking-list {
+	.category {
+		margin-top: 30px * $size-unit;
+	}
+}
+.footer {
+	.list{
+		width: 100%;
+		li {
+			margin-right: 1.6%;
+		}
+	}
+	.footer-text {
+		padding-bottom: 20px * $size-unit;
+	}
+}

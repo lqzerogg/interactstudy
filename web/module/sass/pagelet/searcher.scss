@@ -8,6 +8,7 @@
 	font-size: $small-font;	
 
 	.nav-tab {		
+		margin-left: 0;
 				
 		& > li {
 			width: 25%;
@@ -23,8 +24,10 @@
 			height: 48px * $size-unit;
 			padding: 12px * $size-unit;
 			color: #428bca;
-			width: 100%;
-			margin-bottom: 18px * $size-unit;
+			width: 100%;			
+		}
+		.search-button {
+			margin-top: 18px;
 		}
 		.new-list {
 			list-style: none;

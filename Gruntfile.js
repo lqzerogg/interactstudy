@@ -45,7 +45,7 @@ module.exports = function(grunt) {      // Project configuration.
                     sourcemap: "true",
                     trace: true,
                     loadPath: ["<%= meta.sassPath %>lib/bootstrap"]
-                    // ,style: 'compressed'
+                    ,style: 'compressed'
                 }
             },
             // mutiple compile
@@ -63,7 +63,7 @@ module.exports = function(grunt) {      // Project configuration.
                     sourcemap: "true",
                     trace: true,
                     loadPath: ["<%= meta.sassPath %>pagelet/"]
-                    // ,style: 'compressed'
+                    ,style: 'compressed'
                 }
             }
         },
