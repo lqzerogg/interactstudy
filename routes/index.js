@@ -11,7 +11,8 @@ router.get('/', function(req, res) {
 	}
   res.render('index', { 
   	title: 'Express',
-  	setting: JSON.stringify(setting)
+  	setting: JSON.stringify(setting),
+  	login: 'login'
   });
 });
 

@@ -69,6 +69,17 @@
 			padding: 0 5%;
 			float: right;		
 		}
+		&.login {
+			span {
+				display: none;
+			}
+			.name {
+				display: inline;
+			}
+		}
+		.name {
+			display: none;
+		}
 		.glyphicon {
 			color: $main-color;
 			margin-right: 12px * $size-unit;
