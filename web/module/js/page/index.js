@@ -1,6 +1,7 @@
 {{> item_list}}
 {{> ranking_list}}
 {{> footer}}
+{{> searcher}}
 
 jQuery(function($) {
 	var setting = $.parseJSON(window.setting);

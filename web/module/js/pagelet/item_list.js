@@ -29,18 +29,35 @@ jQuery(function($) {
 						'</ol>'].join('')
 	}		
 	$.fn.itemList = function(options) {
+		var getData = function (param) {
+			$.get(options.dataUrl, param, function(json) {
+				this.find('.i-list').html(itemTpl({
+					datas: json.datas
+				}));
+			}.bind(this));
+		}.bind(this);
+
 		var categoryTpl = doT.template(TPL.categoryTpl),
 			itemTpl = doT.template(TPL.itemTpl);
 
 		// $(this).find('.i-list').append(itemTpl(obj));
 		
-		$(this).find('.category-wrapper .caption').text(options.cName);
+		this.find('.category-wrapper .caption').text(options.cName);		
 
-		$.get(options.dataUrl, function(json) {
-			$(this).find('.i-list').append(itemTpl({
-				datas: json.datas
-			}))		
-		}.bind(this));
+		getData({});
+		
+		this.find('.category').on('click', '.c-item a', function(e) {
+			e.preventDefault();
+
+			var $this = $(this), params = {};
+
+			$this.parent().addClass('active').siblings().removeClass('active');
+
+			params[$this.data('key')] = $this.data('value');
+			getData(params);
+		}).find('.more a').click(function(e) {
+			e.stopPropagation();
+		});
 
 		return this;
 	};

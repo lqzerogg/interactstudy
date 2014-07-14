@@ -74,7 +74,7 @@
             	<div class="tab-content">
             	  <div class="tab-pane fade active in" id="course-searcher">    
             	  	<input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="#" class="search-button btn btn-primary btn-lg">
+            	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
             	  		<span class="glyphicon glyphicon-search"></span>
             	  		<span>搜一搜</span>
             	  	</a>
@@ -90,7 +90,7 @@
             	  </div>
             	  <div class="tab-pane fade" id="training-searcher">
             	  	<input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="#" class="search-button btn btn-primary btn-lg">
+            	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
             	  		<span class="glyphicon glyphicon-search"></span>
             	  		<span>搜一搜</span>
             	  	</a>
@@ -107,7 +107,7 @@
             	  </div>
             	  <div class="tab-pane fade" id="organization-searcher">
             	    <input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="#" class="search-button btn btn-primary btn-lg">
+            	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
             	  		<span class="glyphicon glyphicon-search"></span>
             	  		<span>搜一搜</span>
             	  	</a>
@@ -124,7 +124,7 @@
             	  </div>
             	  <div class="tab-pane fade" id="talking-searcher">
             	    <input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="#" class="search-button btn btn-primary btn-lg">
+            	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
             	  		<span class="glyphicon glyphicon-search"></span>
             	  		<span>搜一搜</span>
             	  	</a>
@@ -180,6 +180,20 @@
           <div class="item-list">
           	<div class="clearfix category-wrapper">
           		<p class="caption"></p>
+          		<ol class="category">				
+          			<li class="c-item active">
+          				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别1</a>
+          			</li>				
+          			<li class="c-item">
+          				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
+          			</li>				
+          			<li class="c-item">
+          				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
+          			</li>			
+          			<li class="c-item more"> 
+          				<a href="{$url}">更多》</a>
+          			</li>					
+          		</ol>
           	</div>
           	<ol class="list i-list clearfix">	
           			
@@ -216,6 +230,20 @@
             <div class="item-list">
             	<div class="clearfix category-wrapper">
             		<p class="caption"></p>
+            		<ol class="category">				
+            			<li class="c-item active">
+            				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别1</a>
+            			</li>				
+            			<li class="c-item">
+            				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
+            			</li>				
+            			<li class="c-item">
+            				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
+            			</li>			
+            			<li class="c-item more"> 
+            				<a href="{$url}">更多》</a>
+            			</li>					
+            		</ol>
             	</div>
             	<ol class="list i-list clearfix">	
             			
