@@ -1,3 +1,4 @@
+{{#footer}}
 <div class="footer container-fluid">
 	<div class="row">
 		<div class="partner col-md-12">
@@ -6,23 +7,23 @@
 			<div class="banner ">
 				<p class="desc">
 					<span>目前已有</span>
-					<span class="num">86321</span>
+					<span class="num">{{partnerNumber}}</span>
 					<span>位合作伙伴加入了极动教室</span>
 				</p>				
 				<div class="contact-us">
-					联系我们
-					<span class="glyphicon glyphicon-chevron-right"></span>
+					<a href="{{linkContactUs}}" target="_blank">
+						联系我们
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</a>					
 				</div>
 			</div>
 			
 			<ul class="list clearfix">
-				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
+				{{#partners}}
+				<li><img src="{{src}}" alt="{{desc}}"></li>
+				{{/partners}}
+				
+				<!-- <li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li> -->				
 
 			</ul>
 		</div>
@@ -33,10 +34,11 @@
 			<p class="permission">京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号</p>
 			<p>文网文[2012]0704-231号  京公网安备110105000728  新出网证(京)字129号</p>
 			<p class="links">
-				<a class="link" href="#">联系我们</a>
-				<a class="link" href="#">免责声明</a>
-				<a class="link" href="#">帮助中心</a>
+				<a class="link" target="_blank" href="{{linkContactUs}}">联系我们</a>
+				<a class="link" target="_blank" href="{{linkDisclaimer}}">免责声明</a>
+				<a class="link" target="_blank" href="{{linkHelpCenter}}">帮助中心</a>
 			</p>
 		</div>
 	</div>
 </div>	
+{{/footer}}

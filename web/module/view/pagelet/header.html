@@ -1,13 +1,14 @@
 <div class="top-style"></div>
+{{#header}}
 <div class="header">          
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4 logo-wrapper">
 				<div class="logo">
-					<a href="XXX"><img src="/img/logo.png" alt="logo"></a>
+					<a href="{{linkIndex}}"><img src="/img/logo.png" alt="logo"></a>
 				</div>
 				<div class="text">
-					<a href="XXXX">
+					<a href="{{linkIndex}}">
 						<span class="word">极动教室</span>
 						<span class="url">www.173course.com</span>
 					</a>
@@ -15,18 +16,19 @@
 			</div>
 			<div class="col-md-5 nav-wrapper">
 				<ul class="nav nav-main clearfix">
-				  <li class="active"><span class="active-top"></span><a href="#">互动首页</a></li>
-				  <li><span class="active-top"></span><a href="#">课程中心</a></li>
-				  <li><span class="active-top"></span><a href="#">教室广场</a></li>
-				  <li><span class="active-top"></span><a href="#">极动社团</a></li>
+				  <li class="active"><span class="active-top"></span><a href="{{linkIndex}}">互动首页</a></li>
+				  <li><span class="active-top"></span><a href="{{linkCourse}}">课程中心</a></li>
+				  <li><span class="active-top"></span><a href="{{linkClassRoom}}">教室广场</a></li>
+				  <li><span class="active-top"></span><a href="{{linkOrganization}}">极动社团</a></li>
 				</ul>
 			</div>
-			<div class="col-md-3 login-wrapper clearfix {{login}}">
-				<span class="register">注册</span>
-				<span class="login">登陆</span>
+			<div class="col-md-3 login-wrapper clearfix {{#isLogin}}login{{/isLogin}}">
+				<a href="{{linkRegister}}"><span class="register">注册</span></a>
+				<a href="{{linkLogin}}"><span class="login">登陆</span></a>
 				<span class="glyphicon glyphicon-user"></span>
-				<span class="name">您好，XXX</span>
+				<span class="name">您好，{{#isLogin}}{{username}}{{/isLogin}}</span>
 			</div>
 		</div>
 	</div>
 </div>
+{{/header}}

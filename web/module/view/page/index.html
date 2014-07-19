@@ -10,11 +10,16 @@
       <link rel='stylesheet' href='/css/index_ie6.css' />
     <![endif]-->
     <script type="text/javascript">
-        var setting = '{{{setting}}}';
+        {{#setting}}
+        var setting = {
+          "courseUrl": "{{courseUrl}}",       
+          "comunityUrl": "{{comunityUrl}}",       
+          "courseRankingUrl": "{{courseRankingUrl}}"
+        };
+        {{/setting}}
     </script>
   </head>
   <body>
-
     {{> header}}
 
     <div class="carridor">
@@ -31,6 +36,7 @@
     </div>
 
     <div class="container-fluid recommander">
+      {{#courses}}
       <div class="row">
         <div class="col-md-10">
           {{> item_list}}
@@ -39,13 +45,17 @@
           {{> ranking_list}}
         </div>
       </div>
+      {{/courses}}
+      {{#banner}}
       <div class="row">
         <div class="col-md-12">
-          <img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="banner" class="banner">
+          <img src="{{src}}" alt="{{desc}}" class="banner">
         </div>
       </div>
-    </div>
+      {{/banner}}
+    </div>    
 
+    {{#organizations}}
     <div class="organization">
       
       <div class="container-fluid">
@@ -59,6 +69,7 @@
         </div>
       </div>
     </div>
+    {{/organizations}}
 
     {{> footer}}
 

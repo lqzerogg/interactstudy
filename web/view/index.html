@@ -16,21 +16,27 @@
       <link rel='stylesheet' href='/css/index_ie6.css' />
     <![endif]-->
     <script type="text/javascript">
-        var setting = '{{{setting}}}';
+        {{#setting}}
+        var setting = {
+          "courseUrl": "{{courseUrl}}",       
+          "comunityUrl": "{{comunityUrl}}",       
+          "courseRankingUrl": "{{courseRankingUrl}}"
+        };
+        {{/setting}}
     </script>
   </head>
   <body>
-
     <div class="top-style"></div>
+    {{#header}}
     <div class="header">          
     	<div class="container-fluid">
     		<div class="row">
     			<div class="col-md-4 logo-wrapper">
     				<div class="logo">
-    					<a href="XXX"><img src="/img/logo.png" alt="logo"></a>
+    					<a href="{{linkIndex}}"><img src="/img/logo.png" alt="logo"></a>
     				</div>
     				<div class="text">
-    					<a href="XXXX">
+    					<a href="{{linkIndex}}">
     						<span class="word">极动教室</span>
     						<span class="url">www.173course.com</span>
     					</a>
@@ -38,27 +44,28 @@
     			</div>
     			<div class="col-md-5 nav-wrapper">
     				<ul class="nav nav-main clearfix">
-    				  <li class="active"><span class="active-top"></span><a href="#">互动首页</a></li>
-    				  <li><span class="active-top"></span><a href="#">课程中心</a></li>
-    				  <li><span class="active-top"></span><a href="#">教室广场</a></li>
-    				  <li><span class="active-top"></span><a href="#">极动社团</a></li>
+    				  <li class="active"><span class="active-top"></span><a href="{{linkIndex}}">互动首页</a></li>
+    				  <li><span class="active-top"></span><a href="{{linkCourse}}">课程中心</a></li>
+    				  <li><span class="active-top"></span><a href="{{linkClassRoom}}">教室广场</a></li>
+    				  <li><span class="active-top"></span><a href="{{linkOrganization}}">极动社团</a></li>
     				</ul>
     			</div>
-    			<div class="col-md-3 login-wrapper clearfix {{login}}">
-    				<span class="register">注册</span>
-    				<span class="login">登陆</span>
+    			<div class="col-md-3 login-wrapper clearfix {{#isLogin}}login{{/isLogin}}">
+    				<a href="{{linkRegister}}"><span class="register">注册</span></a>
+    				<a href="{{linkLogin}}"><span class="login">登陆</span></a>
     				<span class="glyphicon glyphicon-user"></span>
-    				<span class="name">您好，XXX</span>
+    				<span class="name">您好，{{#isLogin}}{{username}}{{/isLogin}}</span>
     			</div>
     		</div>
     	</div>
     </div>
-
+    {{/header}}
 
     <div class="carridor">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4">
+            {{#searcher}}
             <div class="searcher">
             	<ul class="nav nav-tab" role="tablist">
             	  <li class="active">
@@ -77,200 +84,197 @@
             	<div class="tab-content">
             	  <div class="tab-pane fade active in" id="course-searcher">    
             	  	<input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
+            	  	<a href="{{linkSearch}}" data-type="course" target="_blank" class="search-button btn btn-primary btn-lg">
             	  		<span class="glyphicon glyphicon-search"></span>
             	  		<span>搜一搜</span>
             	  	</a>
             	  	<ol class="new-list">
-            	  		<li class="new-item caption">新课推荐:</li>
-            	  		<li class="new-item"><a href="#">沙画</a></li>
-            	  		<li class="new-item"><a href="#">剑击</a></li>
-            	  		<li class="new-item"><a href="#">魔术</a></li>
-            	  		<li class="new-item"><a href="#">竖琴</a></li>
-            	  		<li class="new-item"><a href="#">非洲鼓</a></li>
-            	  		<li class="new-item"><a href="#">印度舞</a></li>
+            	  		{{#newCourses}}<li class="new-item caption">新课推荐:</li>{{/newCourses}}
+            	  		{{#newCourses}}
+            	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
+            	  		{{/newCourses}}
             	  	</ol>
             	  </div>
             	  <div class="tab-pane fade" id="training-searcher">
-            	  	<input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
+            	  	<input type="text" class="search-text" placeholder="请输入培训机构名称、主题、关键词···">
+            	  	<a href="{{linkSearch}}" data-type="training" class="search-button btn btn-primary btn-lg">
             	  		<span class="glyphicon glyphicon-search"></span>
             	  		<span>搜一搜</span>
             	  	</a>
             	  	<ol class="new-list">
-            	  		<li class="new-item caption">新课推荐:</li>
-            	  		<li class="new-item"><a href="#">沙画</a></li>
-            	  		<li class="new-item"><a href="#">剑击</a></li>
-            	  		<li class="new-item"><a href="#">魔术</a></li>
-            	  		<li class="new-item"><a href="#">竖琴</a></li>
-            	  		<li class="new-item"><a href="#">非洲鼓</a></li>
-            	  		<li class="new-item"><a href="#">印度舞</a></li>
+            	  		{{#newTrainings}}<li class="new-item caption">新课推荐:</li>{{/newTrainings}}
+            	  		{{#newTrainings}}
+            	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
+            	  		{{/newTrainings}}
             	  	</ol>
 
             	  </div>
             	  <div class="tab-pane fade" id="organization-searcher">
-            	    <input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
+            	    <input type="text" class="search-text" placeholder="请输入社团名称、主题、关键词···">
+            	  	<a href="{{linkSearch}}" data-type="organization" class="search-button btn btn-primary btn-lg">
             	  		<span class="glyphicon glyphicon-search"></span>
             	  		<span>搜一搜</span>
             	  	</a>
             	  	<ol class="new-list">
-            	  		<li class="new-item caption">新课推荐:</li>
-            	  		<li class="new-item"><a href="#">沙画</a></li>
-            	  		<li class="new-item"><a href="#">剑击</a></li>
-            	  		<li class="new-item"><a href="#">魔术</a></li>
-            	  		<li class="new-item"><a href="#">竖琴</a></li>
-            	  		<li class="new-item"><a href="#">非洲鼓</a></li>
-            	  		<li class="new-item"><a href="#">印度舞</a></li>
+            	  		{{#newOrganizations}}<li class="new-item caption">新课推荐:</li>{{/newOrganizations}}
+            	  		{{#newOrganization}}
+            	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
+            	  		{{/newOrganization}}
             	  	</ol>
 
             	  </div>
             	  <div class="tab-pane fade" id="talking-searcher">
-            	    <input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
+            	    <input type="text" class="search-text" placeholder="请输入主题讨论名称、主题、关键词···">
+            	  	<a href="{{linkSearch}}" data-type="discussion" class="search-button btn btn-primary btn-lg">
             	  		<span class="glyphicon glyphicon-search"></span>
             	  		<span>搜一搜</span>
             	  	</a>
             	  	<ol class="new-list">
-            	  		<li class="new-item caption">新课推荐:</li>
-            	  		<li class="new-item"><a href="#">沙画</a></li>
-            	  		<li class="new-item"><a href="#">剑击</a></li>
-            	  		<li class="new-item"><a href="#">魔术</a></li>
-            	  		<li class="new-item"><a href="#">竖琴</a></li>
-            	  		<li class="new-item"><a href="#">非洲鼓</a></li>
-            	  		<li class="new-item"><a href="#">印度舞</a></li>
+            	  		{{#newDiscussion}}<li class="new-item caption">新课推荐:</li>{{/newDiscussion}}
+            	  		{{#newDiscussion}}
+            	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
+            	  		{{/newDiscussion}}
             	  	</ol>
             	  </div>
             	</div>
-
             </div>
+            {{/searcher}}
           </div>
           <div class="col-md-offset-1 col-md-7">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div id="carousel" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                <li class data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li class data-target="#carousel-example-generic" data-slide-to="2"></li>
+                {{#banners}}
+                  <li data-target="#carousel" data-slide-to="{{index}}" class="{{^index}}active{{/index}}"></li>
+                {{/banners}}    
               </ol>
               <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                  <img height="350" data-src="holder.js/1000x500/auto/#777:#555/text:First slide" alt="First slide" src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg">
+                {{#banners}}
+                <div class="item {{^index}}active{{/index}}">
+                  <a href="{{link}}" target="_blank">
+                    <img height="350" alt="{{desc}}" src="{{img}}">
+                  </a>      
                 </div>
-                <div class="item">
-                  <img height="350" data-src="holder.js/1000x500/auto/#666:#444/text:Second slide" alt="Second slide" src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg">
-                </div>
-                <div class="item">
-                  <img height="350" data-src="holder.js/1000x500/auto/#555:#333/text:Third slide" alt="Third slide" src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg">
-                </div>
+                {{/banners}}
+
               </div>
-              <!-- <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-              </a>
-             --></div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="container-fluid recommander">
+      {{#courses}}
       <div class="row">
         <div class="col-md-10">
+          {{#items}}
           <div class="item-list">
           	<div class="clearfix category-wrapper">
           		<p class="caption"></p>
-          		<ol class="category">				
+          		<ol class="category">
+          			{{#list}}
           			<li class="c-item active">
-          				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别1</a>
+          				<a href="{{link}}" target="_blank" data-value="{{type}}">{{name}}</a>
           			</li>				
-          			<li class="c-item">
+          			{{/list}}						
+          			<!-- <li class="c-item">
           				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
-          			</li>				
-          			<li class="c-item">
-          				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
-          			</li>			
+          			</li> -->			
+          			{{#more}}
           			<li class="c-item more"> 
-          				<a href="{$url}">更多》</a>
-          			</li>					
+          				<a href="{{link}}" target="_blank">更多》</a>
+          			</li>
+          			{{/more}}
           		</ol>
           	</div>
           	<ol class="list i-list clearfix">	
           			
           	</ol>
           </div>
+          {{/items}}
         </div>
         <div class="col-md-2">
+          {{#ranking}}
           <div class="ranking-list">
           	<h2 class="caption"></h2>
           	<ol class="list r-list">
           					
           	</ol>
           	<div class="category">
-          		<h3 class="clearfix"><span>热门分类</span><a href="" class="more">(更多)</a></h3>
+          		<h3 class="clearfix"><span>热门分类</span><a href="{{linkMore}}" class="more" target="_blank">(更多)</a></h3>
           		<ol class="c-list">
           			
           		</ol>
           	</div>
           </div>
+          {{/ranking}}
         </div>
       </div>
+      {{/courses}}
+      {{#banner}}
       <div class="row">
         <div class="col-md-12">
-          <img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="banner" class="banner">
+          <img src="{{src}}" alt="{{desc}}" class="banner">
         </div>
       </div>
-    </div>
+      {{/banner}}
+    </div>    
 
+    {{#organizations}}
     <div class="organization">
       
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-10">
+            {{#items}}
             <div class="item-list">
             	<div class="clearfix category-wrapper">
             		<p class="caption"></p>
-            		<ol class="category">				
+            		<ol class="category">
+            			{{#list}}
             			<li class="c-item active">
-            				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别1</a>
+            				<a href="{{link}}" target="_blank" data-value="{{type}}">{{name}}</a>
             			</li>				
-            			<li class="c-item">
+            			{{/list}}						
+            			<!-- <li class="c-item">
             				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
-            			</li>				
-            			<li class="c-item">
-            				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
-            			</li>			
+            			</li> -->			
+            			{{#more}}
             			<li class="c-item more"> 
-            				<a href="{$url}">更多》</a>
-            			</li>					
+            				<a href="{{link}}" target="_blank">更多》</a>
+            			</li>
+            			{{/more}}
             		</ol>
             	</div>
             	<ol class="list i-list clearfix">	
             			
             	</ol>
             </div>
+            {{/items}}
           </div>
           <div class="col-md-2">
+            {{#ranking}}
             <div class="ranking-list">
             	<h2 class="caption"></h2>
             	<ol class="list r-list">
             					
             	</ol>
             	<div class="category">
-            		<h3 class="clearfix"><span>热门分类</span><a href="" class="more">(更多)</a></h3>
+            		<h3 class="clearfix"><span>热门分类</span><a href="{{linkMore}}" class="more" target="_blank">(更多)</a></h3>
             		<ol class="c-list">
             			
             		</ol>
             	</div>
             </div>
+            {{/ranking}}
           </div>
         </div>
       </div>
     </div>
+    {{/organizations}}
 
+    {{#footer}}
     <div class="footer container-fluid">
     	<div class="row">
     		<div class="partner col-md-12">
@@ -279,23 +283,23 @@
     			<div class="banner ">
     				<p class="desc">
     					<span>目前已有</span>
-    					<span class="num">86321</span>
+    					<span class="num">{{partnerNumber}}</span>
     					<span>位合作伙伴加入了极动教室</span>
     				</p>				
     				<div class="contact-us">
-    					联系我们
-    					<span class="glyphicon glyphicon-chevron-right"></span>
+    					<a href="{{linkContactUs}}" target="_blank">
+    						联系我们
+    						<span class="glyphicon glyphicon-chevron-right"></span>
+    					</a>					
     				</div>
     			</div>
     			
     			<ul class="list clearfix">
-    				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-    				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-    				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-    				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-    				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-    				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
-    				<li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li>
+    				{{#partners}}
+    				<li><img src="{{src}}" alt="{{desc}}"></li>
+    				{{/partners}}
+    				
+    				<!-- <li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li> -->				
 
     			</ul>
     		</div>
@@ -306,13 +310,14 @@
     			<p class="permission">京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号</p>
     			<p>文网文[2012]0704-231号  京公网安备110105000728  新出网证(京)字129号</p>
     			<p class="links">
-    				<a class="link" href="#">联系我们</a>
-    				<a class="link" href="#">免责声明</a>
-    				<a class="link" href="#">帮助中心</a>
+    				<a class="link" target="_blank" href="{{linkContactUs}}">联系我们</a>
+    				<a class="link" target="_blank" href="{{linkDisclaimer}}">免责声明</a>
+    				<a class="link" target="_blank" href="{{linkHelpCenter}}">帮助中心</a>
     			</p>
     		</div>
     	</div>
     </div>	
+    {{/footer}}
 
     <script type="text/javascript" src="/js/lib/modernizr.js"></script>
     <script type="text/javascript" src="/js/lib/jquery.js"></script>

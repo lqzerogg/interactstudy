@@ -1,3 +1,4 @@
+{{#searcher}}
 <div class="searcher">
 	<ul class="nav nav-tab" role="tablist">
 	  <li class="active">
@@ -16,70 +17,58 @@
 	<div class="tab-content">
 	  <div class="tab-pane fade active in" id="course-searcher">    
 	  	<input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
+	  	<a href="{{linkSearch}}" data-type="course" target="_blank" class="search-button btn btn-primary btn-lg">
 	  		<span class="glyphicon glyphicon-search"></span>
 	  		<span>搜一搜</span>
 	  	</a>
 	  	<ol class="new-list">
-	  		<li class="new-item caption">新课推荐:</li>
-	  		<li class="new-item"><a href="#">沙画</a></li>
-	  		<li class="new-item"><a href="#">剑击</a></li>
-	  		<li class="new-item"><a href="#">魔术</a></li>
-	  		<li class="new-item"><a href="#">竖琴</a></li>
-	  		<li class="new-item"><a href="#">非洲鼓</a></li>
-	  		<li class="new-item"><a href="#">印度舞</a></li>
+	  		{{#newCourses}}<li class="new-item caption">新课推荐:</li>{{/newCourses}}
+	  		{{#newCourses}}
+	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
+	  		{{/newCourses}}
 	  	</ol>
 	  </div>
 	  <div class="tab-pane fade" id="training-searcher">
-	  	<input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
+	  	<input type="text" class="search-text" placeholder="请输入培训机构名称、主题、关键词···">
+	  	<a href="{{linkSearch}}" data-type="training" class="search-button btn btn-primary btn-lg">
 	  		<span class="glyphicon glyphicon-search"></span>
 	  		<span>搜一搜</span>
 	  	</a>
 	  	<ol class="new-list">
-	  		<li class="new-item caption">新课推荐:</li>
-	  		<li class="new-item"><a href="#">沙画</a></li>
-	  		<li class="new-item"><a href="#">剑击</a></li>
-	  		<li class="new-item"><a href="#">魔术</a></li>
-	  		<li class="new-item"><a href="#">竖琴</a></li>
-	  		<li class="new-item"><a href="#">非洲鼓</a></li>
-	  		<li class="new-item"><a href="#">印度舞</a></li>
+	  		{{#newTrainings}}<li class="new-item caption">新课推荐:</li>{{/newTrainings}}
+	  		{{#newTrainings}}
+	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
+	  		{{/newTrainings}}
 	  	</ol>
 
 	  </div>
 	  <div class="tab-pane fade" id="organization-searcher">
-	    <input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
+	    <input type="text" class="search-text" placeholder="请输入社团名称、主题、关键词···">
+	  	<a href="{{linkSearch}}" data-type="organization" class="search-button btn btn-primary btn-lg">
 	  		<span class="glyphicon glyphicon-search"></span>
 	  		<span>搜一搜</span>
 	  	</a>
 	  	<ol class="new-list">
-	  		<li class="new-item caption">新课推荐:</li>
-	  		<li class="new-item"><a href="#">沙画</a></li>
-	  		<li class="new-item"><a href="#">剑击</a></li>
-	  		<li class="new-item"><a href="#">魔术</a></li>
-	  		<li class="new-item"><a href="#">竖琴</a></li>
-	  		<li class="new-item"><a href="#">非洲鼓</a></li>
-	  		<li class="new-item"><a href="#">印度舞</a></li>
+	  		{{#newOrganizations}}<li class="new-item caption">新课推荐:</li>{{/newOrganizations}}
+	  		{{#newOrganization}}
+	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
+	  		{{/newOrganization}}
 	  	</ol>
 
 	  </div>
 	  <div class="tab-pane fade" id="talking-searcher">
-	    <input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-	  	<a href="${url}" class="search-button btn btn-primary btn-lg">
+	    <input type="text" class="search-text" placeholder="请输入主题讨论名称、主题、关键词···">
+	  	<a href="{{linkSearch}}" data-type="discussion" class="search-button btn btn-primary btn-lg">
 	  		<span class="glyphicon glyphicon-search"></span>
 	  		<span>搜一搜</span>
 	  	</a>
 	  	<ol class="new-list">
-	  		<li class="new-item caption">新课推荐:</li>
-	  		<li class="new-item"><a href="#">沙画</a></li>
-	  		<li class="new-item"><a href="#">剑击</a></li>
-	  		<li class="new-item"><a href="#">魔术</a></li>
-	  		<li class="new-item"><a href="#">竖琴</a></li>
-	  		<li class="new-item"><a href="#">非洲鼓</a></li>
-	  		<li class="new-item"><a href="#">印度舞</a></li>
+	  		{{#newDiscussion}}<li class="new-item caption">新课推荐:</li>{{/newDiscussion}}
+	  		{{#newDiscussion}}
+	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
+	  		{{/newDiscussion}}
 	  	</ol>
 	  </div>
 	</div>
-
 </div>
+{{/searcher}}

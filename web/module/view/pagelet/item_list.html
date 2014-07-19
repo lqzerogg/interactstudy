@@ -1,22 +1,25 @@
+{{#items}}
 <div class="item-list">
 	<div class="clearfix category-wrapper">
 		<p class="caption"></p>
-		<ol class="category">				
+		<ol class="category">
+			{{#list}}
 			<li class="c-item active">
-				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别1</a>
+				<a href="{{link}}" target="_blank" data-value="{{type}}">{{name}}</a>
 			</li>				
-			<li class="c-item">
+			{{/list}}						
+			<!-- <li class="c-item">
 				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
-			</li>				
-			<li class="c-item">
-				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
-			</li>			
+			</li> -->			
+			{{#more}}
 			<li class="c-item more"> 
-				<a href="{$url}">更多》</a>
-			</li>					
+				<a href="{{link}}" target="_blank">更多》</a>
+			</li>
+			{{/more}}
 		</ol>
 	</div>
 	<ol class="list i-list clearfix">	
 			
 	</ol>
 </div>
+{{/items}}

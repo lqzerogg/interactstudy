@@ -28,10 +28,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/web/public')));
 
 router.init(app);   
-app.use('/get_courses', require('./routes/get_courses'));
-app.use('/get_comunities', require('./routes/get_comunities'));
-app.use('/get_course_ranking', require('./routes/get_course_ranking'));
-app.use('/get_comunity_ranking', require('./routes/get_comunity_ranking'));
+app.use('/teachroom2/coursesFind', require('./routes/get_courses'));
+app.use('/teachroom2/organizationsFind', require('./routes/get_comunities'));
+app.use('/teachroom2/coursesRanking', require('./routes/get_course_ranking'));
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

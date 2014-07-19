@@ -1,8 +1,14 @@
 .carousel {
 	.item {
-		img {
-			height: 350px * $size-unit;
-			max-width: auto;
+		a {
+			img {
+				height: 350px * $size-unit;
+				max-width: auto;
+			}
+		}
+		a {
+			display: block;
+			width: 100%;
 		}
 	}	
 }

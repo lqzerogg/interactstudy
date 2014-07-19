@@ -1,0 +1,15 @@
+{
+	"footer": {                         /*页脚数据*/
+		"partnerNumber": 88888,         /*合作伙伴数量*/
+		"linkContactUs": "xxxxx",       /*联系我们地址*/
+		"linkDisclaimer": "xxxxx",      /*免责声明地址*/
+		"linkHelpCenter": "xxxxx",      /*帮助中心地址*/
+		"partners": [                   /*合作伙伴logo*/
+			{
+				"src": "xxxxx",         /*图片地址*/
+				"desc": "xxxxx"         /*图片描述*/
+			}
+		]
+
+	}
+}

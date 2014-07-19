@@ -4,14 +4,14 @@ jQuery(function($) {
 					'{{~it.datas :v:i}}',
 					'<li class="">',
 						'<span class="index">{{=i}}.</span>',
-						'<a href="{{=v.link}}" class="course">{{=v.name}}</a>',
+						'<a target="_blank" href="{{=v.link}}" class="course">{{=v.name}}</a>',
 						'<span class="num">(<span>{{=v.number}}</span>)人</span>',
 					'</li>',
 					'{{~}}'
 				   ].join(''),
 		cItemTpl: [			
 			'{{~it.datas :v:i}}',
-			'<li><a href="{{=v.link}}">{{=v.name}}</a></li>',
+			'<li><a target="_blank" href="{{=v.link}}">{{=v.name}}</a></li>',
 			'{{~}}'			
 		].join(' ')
 	}

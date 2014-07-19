@@ -4,7 +4,7 @@
 {{> searcher}}
 
 jQuery(function($) {
-	var setting = $.parseJSON(window.setting);
+	var setting = window.setting;
 
 	$('.recommander').itemList({
 		cName: '课程推荐',

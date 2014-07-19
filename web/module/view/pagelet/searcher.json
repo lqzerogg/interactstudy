@@ -1,0 +1,29 @@
+{
+	"searcher": {
+		"linkSearch": "xxxx",           /*搜索地址 */
+		"newCourses": [					/*新课程 */
+			{
+				"link": "xxxx",					/*课程地址 */
+				"name": "xxxx"					/*名字 */
+			}
+		],
+		"newTrainings": [					/*新培训 */
+			{
+				"link": "xxxx",					/*培训地址 */
+				"name": "xxxx"					/*名字 */
+			}
+		],
+		"newOrganizations": [					/*新社团 */
+			{
+				"link": "xxxx",					/*社团地址 */
+				"name": "xxxx"					/*名字 */
+			}
+		],
+		"newDiscussion": [					/*新讨论 */
+			{
+				"link": "xxxx",					/*讨论地址 */
+				"name": "xxxx"					/*名字 */
+			}
+		]
+	}
+}

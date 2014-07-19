@@ -3,7 +3,7 @@ jQuery(function($) {
 		itemTpl: ['{{~it.datas :v:i}}',
 					'<li class="item">',
 						'<div class="image-wrapper">',
-							'<a href="{{=v.link}}">',
+							'<a target="_blank" href="{{=v.link}}">',
 								'<img src="{{=v.src}}" alt="{{=v.name}}">',
 							'</a>',
 							'<div class="name clearfix">',

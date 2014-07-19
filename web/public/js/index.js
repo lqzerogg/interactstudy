@@ -3,7 +3,7 @@ jQuery(function($) {
 		itemTpl: ['{{~it.datas :v:i}}',
 					'<li class="item">',
 						'<div class="image-wrapper">',
-							'<a href="{{=v.link}}">',
+							'<a target="_blank" href="{{=v.link}}">',
 								'<img src="{{=v.src}}" alt="{{=v.name}}">',
 							'</a>',
 							'<div class="name clearfix">',
@@ -68,14 +68,14 @@ jQuery(function($) {
 					'{{~it.datas :v:i}}',
 					'<li class="">',
 						'<span class="index">{{=i}}.</span>',
-						'<a href="{{=v.link}}" class="course">{{=v.name}}</a>',
+						'<a target="_blank" href="{{=v.link}}" class="course">{{=v.name}}</a>',
 						'<span class="num">(<span>{{=v.number}}</span>)人</span>',
 					'</li>',
 					'{{~}}'
 				   ].join(''),
 		cItemTpl: [			
 			'{{~it.datas :v:i}}',
-			'<li><a href="{{=v.link}}">{{=v.name}}</a></li>',
+			'<li><a target="_blank" href="{{=v.link}}">{{=v.name}}</a></li>',
 			'{{~}}'			
 		].join(' ')
 	}
@@ -128,7 +128,7 @@ jQuery(function($) {
 });
 
 jQuery(function($) {
-	var setting = $.parseJSON(window.setting);
+	var setting = window.setting;
 
 	$('.recommander').itemList({
 		cName: '课程推荐',

@@ -1,0 +1,164 @@
+{
+	"setting": {
+		"courseUrl": "/teachroom2/organizationsFind",				
+		"comunityUrl": "/teachroom2/coursesFind",				
+		"courseRankingUrl": "/teachroom2/coursesRanking"
+	},
+	"header": {
+
+		"linkIndex": "#index",      
+		"linkCourse": "#course",      
+		"linkClassRoom": "#room",   
+		"linkOrganization": "#organize",
+		"isLogin": true,           
+		"linkRegister": "#register",    
+		"linkLogin": "#login",       
+		"username": "jackmot"      
+	},
+	"searcher": {
+		"linkSearch": "xxxx",           
+		"newCourses": [					
+			{
+				"link": "xxxx",					
+				"name": "xxxx"					
+			}
+		],
+		"newTrainings": [					
+			{
+				"link": "xxxx",					
+				"name": "xxxx"					
+			}
+		],
+		"newOrganizations": [					
+			{
+				"link": "xxxx",					
+				"name": "xxxx"					
+			}
+		],
+		"newDiscussion": [					
+			{
+				"link": "xxxx",					
+				"name": "xxxx"					
+			}
+		]
+	},
+	"banners": [               
+		{
+			"index": 0,        
+			"link": "#banner0",    
+			"img": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",     
+			"desc": "0"    
+		},
+		{
+			"index": 1,        
+			"link": "#banner1",    
+			"img": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",     
+			"desc": "1"    
+		},
+		{
+			"index": 2,        
+			"link": "#banner2",    
+			"img": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",     
+			"desc": "2"    
+		}
+	],
+	"courses": {
+		"items": {     
+			"list": [    
+				{
+					"link": "#type0",     
+					"type": "type0",      
+					"name": "类别0"       
+				},
+				{
+					"link": "#type1",     
+					"type": "type1",      
+					"name": "类别1"       
+				},
+				{
+					"link": "#type2",     
+					"type": "type2",      
+					"name": "类别2"       
+				}
+			],
+			"more": {                    
+				"link": "#more"           
+			}
+
+		},
+		"ranking": {     
+			"linkMore": "#more"    
+		},
+		"banner": {
+			"src": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",
+			"desc": "midbanner"
+		}
+	},
+	"organizations": {
+		"items": {     
+			"list": [    
+				{
+					"link": "#type0",     
+					"type": "type0",      
+					"name": "类别0"       
+				},
+				{
+					"link": "#type1",     
+					"type": "type1",      
+					"name": "类别1"       
+				},
+				{
+					"link": "#type2",     
+					"type": "type2",      
+					"name": "类别2"       
+				}
+			],
+			"more": {                    
+				"link": "#more"           
+			}
+
+		},
+		"ranking": {     
+			"linkMore": "#more"    
+		}
+	},
+
+	"footer": {                         
+		"partnerNumber": 88888,         
+		"linkContactUs": "#contactUs",       
+		"linkDisclaimer": "#disclaimer",      
+		"linkHelpCenter": "#help center",      
+		"partners": [                   
+			{
+				"src": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",         
+				"desc": "合作伙伴"         
+			},
+			{
+				"src": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",         
+				"desc": "合作伙伴"         
+			},
+			{
+				"src": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",         
+				"desc": "合作伙伴"         
+			},
+			{
+				"src": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",         
+				"desc": "合作伙伴"         
+			},
+			{
+				"src": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",         
+				"desc": "合作伙伴"         
+			},
+			{
+				"src": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",         
+				"desc": "合作伙伴"         
+			},
+			{
+				"src": "http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg",         
+				"desc": "合作伙伴"         
+			}
+		]
+
+	}
+
+}

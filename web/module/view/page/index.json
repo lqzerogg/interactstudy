@@ -1,0 +1,109 @@
+{
+	"setting": {
+		"courseUrl": "/get_courses",				/*获取课程地址 */
+		"comunityUrl": "/get_comunities",				/*获取社团地址 */
+		"courseRankingUrl": "/get_course_ranking"		/*获取地址 */		
+	},
+
+	"header": {
+
+		"linkIndex": "xxxxx",      /*首页地址*/
+		"linkCourse": "xxxx",      /*课程中心地址*/
+		"linkClassRoom": "xxxx",   /*教室广场地址*/
+		"linkOrganization": "xxxx",/*极动社区地址*/
+		"isLogin": true,           /*是否已登录*/
+		"linkRegister": "xxxx",    /*注册地址*/
+		"linkLogin": "xxxx",       /*登陆地址*/
+		"username": "jackmot"      /*如果已登录，用户名，否则无	*/
+	},
+	"searcher": {
+		"linkSearch": "xxxx",           /*搜索地址 */
+		"newCourses": [					/*新课程 */
+			{
+				"link": "xxxx",					/*课程地址 */
+				"name": "xxxx"					/*名字 */
+			}
+		],
+		"newTrainings": [					/*新培训 */
+			{
+				"link": "xxxx",					/*培训地址 */
+				"name": "xxxx"					/*名字 */
+			}
+		],
+		"newOrganizations": [					/*新社团 */
+			{
+				"link": "xxxx",					/*社团地址 */
+				"name": "xxxx"					/*名字 */
+			}
+		],
+		"newDiscussion": [					/*新讨论 */
+			{
+				"link": "xxxx",					/*讨论地址 */
+				"name": "xxxx"					/*名字 */
+			}
+		]
+	},
+	"banners": [               /*轮转图片*/
+		{
+			"index": 0,        /*图片下标，由于mastache的不灵活性，需要这边由于特殊需要，必须要标记下标*/
+			"link": "xxxx",    /*点击图片的跳转的地址*/
+			"img": "xxxx",     /*图片地址*/
+			"desc": "xxxxx"    /*图片的描述*/
+		}
+	],
+	"courses": {
+		"items": {     /*列表*/
+			"list": [    /*数组*/
+				{
+					"link": "xxxxx",     /*url地址*/
+					"type": "xxxx",      /*类别*/
+					"name": "xxxx"       /*类别名字*/
+				}
+			],
+			"more": {                    /*是不是有更多*/
+				"link": "xxxx"           /*更多的url地址*/
+			}
+
+		},
+		"ranking": {     /*排行榜*/
+			"linkMore": "xxxx"    /*排行榜中，更多的url地址*/
+		},
+		"banner": {
+			"src": "xxxx",
+			"desc": "xxxx"
+		}
+	},
+	"organizations": {
+		"items": {     /*列表*/
+			"list": [    /*数组*/
+				{
+					"link": "xxxxx",     /*url地址*/
+					"type": "xxxx",      /*类别*/
+					"name": "xxxx"       /*类别名字*/
+				}
+			],
+			"more": {                    /*是不是有更多*/
+				"link": "xxxx"           /*更多的url地址*/
+			}
+
+		},
+		"ranking": {     /*排行榜*/
+			"linkMore": "xxxx"    /*排行榜中，更多的url地址*/
+		},
+	},
+
+	"footer": {                         /*页脚数据*/
+		"partnerNumber": 88888,         /*合作伙伴数量*/
+		"linkContactUs": "xxxxx",       /*联系我们地址*/
+		"linkDisclaimer": "xxxxx",      /*免责声明地址*/
+		"linkHelpCenter": "xxxxx",      /*帮助中心地址*/
+		"partners": [                   /*合作伙伴logo*/
+			{
+				"src": "xxxxx",         /*图片地址*/
+				"desc": "xxxxx"         /*图片描述*/
+			}
+		]
+
+	}
+
+}
