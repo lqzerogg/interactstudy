@@ -1,0 +1,52 @@
+@import "varable";
+
+.item-list {
+	.list {
+		margin-bottom: 40px * $size-unit;		
+		.image-wrapper .name {
+			padding-left: 0;
+			padding-right: 0;
+			
+			.stars {
+				*float: right;
+				*display: block;
+				*position: absolute;
+				*height: 100%;
+				*width: 70px  * $size-unit;
+				*right: 0;
+
+				span {
+					*display: block;
+					*width: 70px  * $size-unit;
+					*white-space: pre;
+					*line-height: 20px  * $size-unit;
+					*height: 100%;
+					*float: left;
+					*text-indent: -9999999px;
+					*background-position-y: 4px;
+					*top: 0;					
+					*color: transparent;
+				}
+				.star-black {
+					*background: url("../img/icon_stars_black.png") no-repeat top left;
+					*background-position-y: 2px;
+				}
+				.star-yellow {
+					*background: url("../img/icon_stars_yellow.png") no-repeat top left;
+					*margin-top: -26px  * $size-unit;
+					*background-position-y: 2px;
+				}
+				@mixin stars-count($num) {
+					.stars-#{$num} {
+						.star-yellow {
+							*width: 15px * $num  * $size-unit;
+						}
+					}
+				}
+				@for $i from 1 to 5 {
+					@include stars-count($i);
+				}
+			}
+		}
+	}	
+}

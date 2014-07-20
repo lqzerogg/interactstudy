@@ -3,7 +3,7 @@
 
 @mixin stars-count($num) {
 	.stars-#{$num} {
-		.star-yellow:after {
+		.star-yellow {
 			width: 13px * $num;
 		}
 	}
@@ -93,23 +93,27 @@
 					position: relative;
 					span {
 						display: block;
+						width: auto;
+						white-space: pre;
+						color: transparent;
+						height: 20px;						
 					}
-					span:after {
-						content: "\e006 \e006 \e006 \e006 \e006";
-						font-family: "Glyphicons Halflings";
+					span:before {
+						content: "\e006 \e006 \e006 \e006 \e006";						
 						position: relative;
 						overflow: hidden;
 						display: block;
 						height: 20px * $size-unit;
 					}
-					.star-yellow:after {
+					.star-yellow:before {
 						color: $yellow-color;
 						z-index: 1;
 						margin-top: -20px;
 					}
-					.star-black:after {
+					.star-black:before {
 						color: rgb(214,212,217);						
-					}
+					}				
+
 				}
 				@for $i from 1 to 5 {
 					@include stars-count($i);

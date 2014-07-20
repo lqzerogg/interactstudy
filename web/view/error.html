@@ -18,95 +18,55 @@
   </head>
   <body>
 
-    <div class="top-style"></div>
-    {{#header}}
-    <div class="header">          
-    	<div class="container-fluid">
-    		<div class="row">
-    			<div class="col-md-4 logo-wrapper">
-    				<div class="logo">
-    					<a href="{{linkIndex}}"><img src="/img/logo.png" alt="logo"></a>
-    				</div>
-    				<div class="text">
-    					<a href="{{linkIndex}}">
-    						<span class="word">极动教室</span>
-    						<span class="url">www.173course.com</span>
-    					</a>
-    				</div>
-    			</div>
-    			<div class="col-md-5 nav-wrapper">
-    				<ul class="nav nav-main clearfix">
-    				  <li class="active"><span class="active-top"></span><a href="{{linkIndex}}">互动首页</a></li>
-    				  <li><span class="active-top"></span><a href="{{linkCourse}}">课程中心</a></li>
-    				  <li><span class="active-top"></span><a href="{{linkClassRoom}}">教室广场</a></li>
-    				  <li><span class="active-top"></span><a href="{{linkOrganization}}">极动社团</a></li>
-    				</ul>
-    			</div>
-    			<div class="col-md-3 login-wrapper clearfix {{#isLogin}}login{{/isLogin}}">
-    				<a href="{{linkRegister}}"><span class="register">注册</span></a>
-    				<a href="{{linkLogin}}"><span class="login">登陆</span></a>
-    				<span class="glyphicon glyphicon-user"></span>
-    				<span class="name">您好，{{#isLogin}}{{username}}{{/isLogin}}</span>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-    {{/header}}
-
     
-
     <div class="container-fluid recommander">
+      
       <div class="row">
         <div class="col-md-10">
-          {{#items}}
           <div class="item-list">
-          	<div class="clearfix category-wrapper">
-          		<p class="caption"></p>
-          		<ol class="category">
-          			{{#list}}
-          			<li class="c-item">
-          				<a href="{{link}}" target="_blank" data-value="{{type}}">{{name}}</a>
-          			</li>				
-          			{{/list}}						
-          			<!-- <li class="c-item">
-          				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
-          			</li> -->			
-          			{{#more}}
-          			<li class="c-item more"> 
-          				<a href="{{link}}" target="_blank">更多》</a>
-          			</li>
-          			{{/more}}
-          		</ol>
-          	</div>
-          	<ol class="list i-list clearfix">	
-          			
-          	</ol>
-          </div>
-          {{/items}}
-        </div>
-        <div class="col-md-2">
-          {{#ranking}}
-          <div class="ranking-list">
-          	<h2 class="caption"></h2>
-          	<ol class="list r-list">
-          					
-          	</ol>
-          	<div class="category">
-          		<h3 class="clearfix"><span>热门分类</span><a href="{{linkMore}}" class="more" target="_blank">(更多)</a></h3>
-          		<ol class="c-list">
-          			
-          		</ol>
-          	</div>
-          </div>
-          {{/ranking}}
-        </div>
+  <div class="clearfix category-wrapper">
+    <p class="caption"></p>    
+  </div>
+  <style>
+    .stars, .star-black, .star-yellow {
+      display: block !important;
+      width: 100%;
+      height: 20px;      
+    }
+    span {
+      color: yellow !important;
+    }
+    
+    .glyphicon-stars:before {
+      content: "\e006" !important;
+      width: auto !important;
+    }
+  </style>
+  <ol class="list i-list clearfix"> 
+      
+      <li class="item"><div class="image-wrapper"><a target="_blank" href="#"><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="梵高教你星夜7"></a><div class="name clearfix"><a href="#">
+      <span class="text">梵高教你星夜7</span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="stars stars-3 clearfix">
+      <em class="star glyphicon-stars glyphicon"></em>
+      <em class="star glyphicon-stars glyphicon"></em>
+      </span>
+      </a></div></div><div class="desc"><p class="teacher">授课老师：黄小雄7</p><p class="stu-num">报名人数：<span>2916</span>人</p></div></li>
+      
+  </ol>
+</div>
+
+
+
+
+
+        </div>        
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="banner" class="banner">
-        </div>
-      </div>
-    </div>
+      
+      
+    </div> 
+    
+
 
     
     <script type="text/javascript" src="/js/lib/modernizr.js"></script>

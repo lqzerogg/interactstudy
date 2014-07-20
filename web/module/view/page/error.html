@@ -12,25 +12,55 @@
   </head>
   <body>
 
-    {{> header}}
-
     
-
     <div class="container-fluid recommander">
+      
       <div class="row">
         <div class="col-md-10">
-          {{> item_list}}
-        </div>
-        <div class="col-md-2">
-          {{> ranking_list}}
-        </div>
+          <div class="item-list">
+  <div class="clearfix category-wrapper">
+    <p class="caption"></p>    
+  </div>
+  <style>
+    .stars, .star-black, .star-yellow {
+      display: block !important;
+      width: 100%;
+      height: 20px;      
+    }
+    span {
+      color: yellow !important;
+    }
+    
+    .glyphicon-stars:before {
+      content: "\e006" !important;
+      width: auto !important;
+    }
+  </style>
+  <ol class="list i-list clearfix"> 
+      
+      <li class="item"><div class="image-wrapper"><a target="_blank" href="#"><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="梵高教你星夜7"></a><div class="name clearfix"><a href="#">
+      <span class="text">梵高教你星夜7</span>
+      <span class="glyphicon glyphicon-star"></span>
+      <span class="stars stars-3 clearfix">
+      <em class="star glyphicon-stars glyphicon"></em>
+      <em class="star glyphicon-stars glyphicon"></em>
+      </span>
+      </a></div></div><div class="desc"><p class="teacher">授课老师：黄小雄7</p><p class="stu-num">报名人数：<span>2916</span>人</p></div></li>
+      
+  </ol>
+</div>
+
+
+
+
+
+        </div>        
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="banner" class="banner">
-        </div>
-      </div>
-    </div>
+      
+      
+    </div> 
+    
+
 
     
     {{> lib_js}}

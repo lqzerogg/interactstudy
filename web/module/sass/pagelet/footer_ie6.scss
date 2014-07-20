@@ -1,0 +1,13 @@
+@import "varable";
+
+.footer {
+	.list{
+		width: 100%;
+		li {
+			margin-right: 1.6%;
+		}
+	}
+	.footer-text {
+		padding-bottom: 20px * $size-unit;
+	}
+}
