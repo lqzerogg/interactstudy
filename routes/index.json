@@ -1,7 +1,7 @@
 {
 	"setting": {
-		"courseUrl": "/teachroom2/organizationsFind",				
-		"comunityUrl": "/teachroom2/coursesFind",				
+		"courseUrl": "/teachroom2/coursesFind",				
+		"comunityUrl": "/teachroom2/organizationsFind",				
 		"courseRankingUrl": "/teachroom2/coursesRanking"
 	},
 	"header": {
@@ -21,24 +21,72 @@
 			{
 				"link": "xxxx",					
 				"name": "xxxx"					
+			},
+			{
+				"link": "xxxx",					
+				"name": "xxxx"					
+			},
+			{
+				"link": "xxxx",					
+				"name": "xxxx"					
+			},
+			{
+				"link": "xxxx",					
+				"name": "xxxx"					
 			}
 		],
 		"newTrainings": [					
 			{
-				"link": "xxxx",					
-				"name": "xxxx"					
+				"link": "xxxx1",					
+				"name": "xxxx1"					
+			},
+			{
+				"link": "xxxx1",					
+				"name": "xxxx1"					
+			},
+			{
+				"link": "xxxx1",					
+				"name": "xxxx1"					
+			},
+			{
+				"link": "xxxx1",					
+				"name": "xxxx1"					
 			}
 		],
 		"newOrganizations": [					
 			{
-				"link": "xxxx",					
-				"name": "xxxx"					
+				"link": "xxxx2",					
+				"name": "xxxx2"					
+			},
+			{
+				"link": "xxxx2",					
+				"name": "xxxx2"					
+			},
+			{
+				"link": "xxxx2",					
+				"name": "xxxx2"					
+			},
+			{
+				"link": "xxxx2",					
+				"name": "xxxx2"					
 			}
 		],
 		"newDiscussion": [					
 			{
-				"link": "xxxx",					
-				"name": "xxxx"					
+				"link": "xxxx3",					
+				"name": "xxxx3"					
+			},
+			{
+				"link": "xxxx3",					
+				"name": "xxxx3"					
+			},
+			{
+				"link": "xxxx3",					
+				"name": "xxxx3"					
+			},
+			{
+				"link": "xxxx3",					
+				"name": "xxxx3"					
 			}
 		]
 	},

@@ -29,7 +29,9 @@ jQuery(function($) {
 						'</ol>'].join('')
 	}		
 	$.fn.itemList = function(options) {
-		var getData = function (param) {
+		var $cItem = $(this).find('.item-list .c-item'),
+			params = {},
+			getData = function (param) {
 			$.get(options.dataUrl, param, function(json) {
 				this.find('.i-list').html(itemTpl({
 					datas: json.datas
@@ -44,17 +46,21 @@ jQuery(function($) {
 		
 		this.find('.category-wrapper .caption').text(options.cName);		
 
-		getData({});
+		params[options.keyName] = $cItem.eq(0).addClass('active').find('a').data('value');
+		// getData(params);
 		
 		this.find('.category').on('click', '.c-item a', function(e) {
 			e.preventDefault();
 
 			var $this = $(this), params = {};
 
-			$this.parent().addClass('active').siblings().removeClass('active');
+			if(!$this.parent().hasClass('active')) {				
+				$this.parent().addClass('active').siblings().removeClass('active');
 
-			params[$this.data('key')] = $this.data('value');
-			getData(params);
+				params[options.keyName] = $this.data('value');
+				getData(params);
+			}
+
 		}).find('.more a').click(function(e) {
 			e.stopPropagation();
 		});
@@ -85,7 +91,7 @@ jQuery(function($) {
 
 		$(this).find('.caption').text(options.caption);
 
-		$.get(options.dataUrl, function(json) {
+		$.get(options.dataUrl, options.params, function(json) {
 			$(this).find('.r-list').append(rItemTpl({
 				datas: json.rankingDatas
 			})).end().find('.c-list').append(cItemTpl({
@@ -132,17 +138,25 @@ jQuery(function($) {
 
 	$('.recommander').itemList({
 		cName: '课程推荐',
-		dataUrl: setting.courseUrl
+		dataUrl: setting.courseUrl,
+		keyName: 'courseType'
 	}).find('.ranking-list').rankingList({
 		caption: '热门课程排行',
-		dataUrl: setting.courseRankingUrl
+		dataUrl: setting.courseRankingUrl,
+		params: {
+			type: 'course'
+		}
 	});	
 
 	$('.organization').itemList({
 		cName: '极动社团',
-		dataUrl: setting.comunityUrl
+		dataUrl: setting.comunityUrl,
+		keyName: 'type'
 	}).find('.ranking-list').rankingList({
 		caption: '精彩主题讨论',
-		dataUrl: setting.comunityRankingUrl
+		dataUrl: setting.courseRankingUrl,
+		params: {
+			type: 'discussion'
+		}
 	});	
 });

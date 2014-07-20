@@ -21,7 +21,7 @@ jQuery(function($) {
 
 		$(this).find('.caption').text(options.caption);
 
-		$.get(options.dataUrl, function(json) {
+		$.get(options.dataUrl, options.params, function(json) {
 			$(this).find('.r-list').append(rItemTpl({
 				datas: json.rankingDatas
 			})).end().find('.c-list').append(cItemTpl({

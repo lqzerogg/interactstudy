@@ -3,12 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	var obj = {rankingDatas: [], categories: []}, i = 10;
+	var obj = {rankingDatas: [], categories: []}, i = 10,
+		name = {course: '高级钢琴学', discussion: '高级钢琴社区'}
 
 	while(i-- > 0) {
 		obj.rankingDatas.push({
 			link: '#',
-			name: '高级钢琴学' + i,			
+			name: name[req.query.type] + i,			
 			number: Math.floor(23333 / (i + 1))
 		});
 	}

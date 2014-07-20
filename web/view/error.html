@@ -53,108 +53,7 @@
     </div>
     {{/header}}
 
-    <div class="carridor">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4">
-            {{#searcher}}
-            <div class="searcher">
-            	<ul class="nav nav-tab" role="tablist">
-            	  <li class="active">
-            	  	<a href="#course-searcher" role="tab" data-toggle="tab">课程</a>
-            	  </li>
-            	  <li class="">
-            	  	<a href="#training-searcher" role="tab" data-toggle="tab">培训机构</a>
-            	  </li>
-            	  <li class="">
-            	    <a role="tab" data-toggle="tab" href="#organization-searcher">社团</a>    
-            	  </li>
-            	  <li class="">
-            	    <a role="tab" data-toggle="tab" href="#talking-searcher">主题讨论</a>    
-            	  </li>
-            	</ul>
-            	<div class="tab-content">
-            	  <div class="tab-pane fade active in" id="course-searcher">    
-            	  	<input type="text" class="search-text" placeholder="请输入课题名称、主题、关键词···">
-            	  	<a href="{{linkSearch}}" data-type="course" target="_blank" class="search-button btn btn-primary btn-lg">
-            	  		<span class="glyphicon glyphicon-search"></span>
-            	  		<span>搜一搜</span>
-            	  	</a>
-            	  	<ol class="new-list">
-            	  		{{#newCourses}}<li class="new-item caption">新课推荐:</li>{{/newCourses}}
-            	  		{{#newCourses}}
-            	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
-            	  		{{/newCourses}}
-            	  	</ol>
-            	  </div>
-            	  <div class="tab-pane fade" id="training-searcher">
-            	  	<input type="text" class="search-text" placeholder="请输入培训机构名称、主题、关键词···">
-            	  	<a href="{{linkSearch}}" data-type="training" class="search-button btn btn-primary btn-lg">
-            	  		<span class="glyphicon glyphicon-search"></span>
-            	  		<span>搜一搜</span>
-            	  	</a>
-            	  	<ol class="new-list">
-            	  		{{#newTrainings}}<li class="new-item caption">新课推荐:</li>{{/newTrainings}}
-            	  		{{#newTrainings}}
-            	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
-            	  		{{/newTrainings}}
-            	  	</ol>
-
-            	  </div>
-            	  <div class="tab-pane fade" id="organization-searcher">
-            	    <input type="text" class="search-text" placeholder="请输入社团名称、主题、关键词···">
-            	  	<a href="{{linkSearch}}" data-type="organization" class="search-button btn btn-primary btn-lg">
-            	  		<span class="glyphicon glyphicon-search"></span>
-            	  		<span>搜一搜</span>
-            	  	</a>
-            	  	<ol class="new-list">
-            	  		{{#newOrganizations}}<li class="new-item caption">新课推荐:</li>{{/newOrganizations}}
-            	  		{{#newOrganization}}
-            	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
-            	  		{{/newOrganization}}
-            	  	</ol>
-
-            	  </div>
-            	  <div class="tab-pane fade" id="talking-searcher">
-            	    <input type="text" class="search-text" placeholder="请输入主题讨论名称、主题、关键词···">
-            	  	<a href="{{linkSearch}}" data-type="discussion" class="search-button btn btn-primary btn-lg">
-            	  		<span class="glyphicon glyphicon-search"></span>
-            	  		<span>搜一搜</span>
-            	  	</a>
-            	  	<ol class="new-list">
-            	  		{{#newDiscussion}}<li class="new-item caption">新课推荐:</li>{{/newDiscussion}}
-            	  		{{#newDiscussion}}
-            	  		<li class="new-item"><a href="{{link}}" target="_blank">{{name}}</a></li>
-            	  		{{/newDiscussion}}
-            	  	</ol>
-            	  </div>
-            	</div>
-            </div>
-            {{/searcher}}
-          </div>
-          <div class="col-md-offset-1 col-md-7">
-            <div id="carousel" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                {{#banners}}
-                  <li data-target="#carousel" data-slide-to="{{index}}" class="{{^index}}active{{/index}}"></li>
-                {{/banners}}    
-              </ol>
-              <div class="carousel-inner" role="listbox">
-                {{#banners}}
-                <div class="item {{^index}}active{{/index}}">
-                  <a href="{{link}}" target="_blank">
-                    <img height="350" alt="{{desc}}" src="{{img}}">
-                  </a>      
-                </div>
-                {{/banners}}
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <div class="container-fluid recommander">
       <div class="row">
@@ -165,7 +64,7 @@
           		<p class="caption"></p>
           		<ol class="category">
           			{{#list}}
-          			<li class="c-item active">
+          			<li class="c-item">
           				<a href="{{link}}" target="_blank" data-value="{{type}}">{{name}}</a>
           			</li>				
           			{{/list}}						
@@ -180,7 +79,15 @@
           		</ol>
           	</div>
           	<ol class="list i-list clearfix">	
-          			
+          			<li class="item"><div class="image-wrapper"><a target="_blank" href="#"><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="梵高教你星夜8"></a><div class="name clearfix"><span class="text">梵高教你星夜8</span>
+          			<span class="stars stars-4 clearfix">
+
+          			<span class="star-black"></span>
+          			<span class="star-yellow"></span>
+          			</span></div></div><div class="desc"><p class="teacher">授课老师：黄小雄8</p><p class="stu-num">报名人数：<span>2592</span>人</p></div></li>
+          			<li class="item"><div class="image-wrapper"><a target="_blank" href="#"><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="梵高教你星夜8"></a><div class="name clearfix"><a href="#"><span class="text">梵高教你星夜8</span><span class="stars stars-4 clearfix"><span class="star-black"></span><span class="star-yellow"></span></span></a></div></div><div class="desc"><p class="teacher">授课老师：黄小雄8</p><p class="stu-num">报名人数：<span>2592</span>人</p></div></li>
+          			<li class="item"><div class="image-wrapper"><a target="_blank" href="#"><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="梵高教你星夜8"></a><div class="name clearfix"><a href="#"><span class="text">梵高教你星夜8</span><span class="stars stars-4 clearfix"><span class="star-black"></span><span class="star-yellow"></span></span></a></div></div><div class="desc"><p class="teacher">授课老师：黄小雄8</p><p class="stu-num">报名人数：<span>2592</span>人</p></div></li>
+          			<li class="item"><div class="image-wrapper"><a target="_blank" href="#"><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="梵高教你星夜8"></a><div class="name clearfix"><a href="#"><span class="text">梵高教你星夜8</span><span class="stars stars-4 clearfix"><span class="star-black"></span><span class="star-yellow"></span></span></a></div></div><div class="desc"><p class="teacher">授课老师：黄小雄8</p><p class="stu-num">报名人数：<span>2592</span>人</p></div></li>
           	</ol>
           </div>
           {{/items}}
@@ -209,103 +116,7 @@
       </div>
     </div>
 
-    <div class="organization">
-      
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-10">
-            {{#items}}
-            <div class="item-list">
-            	<div class="clearfix category-wrapper">
-            		<p class="caption"></p>
-            		<ol class="category">
-            			{{#list}}
-            			<li class="c-item active">
-            				<a href="{{link}}" target="_blank" data-value="{{type}}">{{name}}</a>
-            			</li>				
-            			{{/list}}						
-            			<!-- <li class="c-item">
-            				<a href="#" data-key="{$param_name}" data-value="{$param_value}">类别2</a>
-            			</li> -->			
-            			{{#more}}
-            			<li class="c-item more"> 
-            				<a href="{{link}}" target="_blank">更多》</a>
-            			</li>
-            			{{/more}}
-            		</ol>
-            	</div>
-            	<ol class="list i-list clearfix">	
-            			
-            	</ol>
-            </div>
-            {{/items}}
-          </div>
-          <div class="col-md-2">
-            {{#ranking}}
-            <div class="ranking-list">
-            	<h2 class="caption"></h2>
-            	<ol class="list r-list">
-            					
-            	</ol>
-            	<div class="category">
-            		<h3 class="clearfix"><span>热门分类</span><a href="{{linkMore}}" class="more" target="_blank">(更多)</a></h3>
-            		<ol class="c-list">
-            			
-            		</ol>
-            	</div>
-            </div>
-            {{/ranking}}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {{#footer}}
-    <div class="footer container-fluid">
-    	<div class="row">
-    		<div class="partner col-md-12">
-    			<h2 class="caption">品牌战略合作伙伴</h2>
-    			
-    			<div class="banner ">
-    				<p class="desc">
-    					<span>目前已有</span>
-    					<span class="num">{{partnerNumber}}</span>
-    					<span>位合作伙伴加入了极动教室</span>
-    				</p>				
-    				<div class="contact-us">
-    					<a href="{{linkContactUs}}" target="_blank">
-    						联系我们
-    						<span class="glyphicon glyphicon-chevron-right"></span>
-    					</a>					
-    				</div>
-    			</div>
-    			
-    			<ul class="list clearfix">
-    				{{#partners}}
-    				<li><img src="{{src}}" alt="{{desc}}"></li>
-    				{{/partners}}
-    				
-    				<!-- <li><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="partner"></li> -->				
-
-    			</ul>
-    		</div>
-    	</div>
-    	<div class="row">
-    		<div class="col-md-12 footer-text">
-    			<p class="copyright">© 2005－2014 XXX.com, all rights reserved p>
-    			<p class="permission">京ICP证090015号 京ICP备11027288号 网络视听许可证0110418号</p>
-    			<p>文网文[2012]0704-231号  京公网安备110105000728  新出网证(京)字129号</p>
-    			<p class="links">
-    				<a class="link" target="_blank" href="{{linkContactUs}}">联系我们</a>
-    				<a class="link" target="_blank" href="{{linkDisclaimer}}">免责声明</a>
-    				<a class="link" target="_blank" href="{{linkHelpCenter}}">帮助中心</a>
-    			</p>
-    		</div>
-    	</div>
-    </div>	
-    {{/footer}}
-
-
+    
     <script type="text/javascript" src="/js/lib/modernizr.js"></script>
     <script type="text/javascript" src="/js/lib/jquery.js"></script>
     <script type="text/javascript" src="/js/lib/bootstrap.js"></script>
