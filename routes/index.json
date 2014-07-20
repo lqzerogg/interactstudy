@@ -129,9 +129,7 @@
 					"name": "类别2"       
 				}
 			],
-			"more": {                    
-				"link": "#more"           
-			}
+			"linkMore": "xxx"				
 
 		},
 		"ranking": {     

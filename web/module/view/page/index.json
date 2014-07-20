@@ -60,10 +60,7 @@
 					"name": "xxxx"       /*类别名字*/
 				}
 			],
-			"more": {                    /*是不是有更多*/
-				"link": "xxxx"           /*更多的url地址*/
-			}
-
+			"linkMore": "xxx"				/*更多的url地址*/
 		},
 		"ranking": {     /*排行榜*/
 			"linkMore": "xxxx"    /*排行榜中，更多的url地址*/
@@ -81,11 +78,7 @@
 					"type": "xxxx",      /*类别*/
 					"name": "xxxx"       /*类别名字*/
 				}
-			],
-			"more": {                    /*是不是有更多*/
-				"link": "xxxx"           /*更多的url地址*/
-			}
-
+			]
 		},
 		"ranking": {     /*排行榜*/
 			"linkMore": "xxxx"    /*排行榜中，更多的url地址*/
