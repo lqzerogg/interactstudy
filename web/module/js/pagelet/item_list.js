@@ -47,7 +47,7 @@ jQuery(function($) {
 		this.find('.category-wrapper .caption').text(options.cName);		
 
 		params[options.keyName] = $cItem.eq(0).addClass('active').find('a').data('value');
-		// getData(params);
+		getData(params);
 		
 		this.find('.category').on('click', '.c-item a', function(e) {
 			e.preventDefault();
