@@ -1,12 +1,12 @@
-<div id="carousel" class="carousel slide" data-ride="carousel">
+<div id="carousel" class="carousel slide">
   <ol class="carousel-indicators">
     {{#banners}}
-      <li data-target="#carousel" data-slide-to="{{index}}" class="{{^index}}active{{/index}}"></li>
+      <li data-target="#carousel" data-slide-to="{{index}}" class=""></li>
     {{/banners}}    
   </ol>
   <div class="carousel-inner" role="listbox">
     {{#banners}}
-    <div class="item {{^index}}active{{/index}}">
+    <div class="item">
       <a href="{{link}}" target="_blank">
         <img height="350" alt="{{desc}}" src="{{img}}">
       </a>      

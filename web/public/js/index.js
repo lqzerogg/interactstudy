@@ -132,6 +132,11 @@ jQuery(function($) {
 		
 	// });
 });
+jQuery(function($) {
+	$('#carousel').find('.carousel-indicators li:first-child').addClass('active')
+	.end().find('.carousel-inner .item:first-child').addClass('active')
+	.end().carousel();
+});
 
 jQuery(function($) {
 	var setting = window.setting;

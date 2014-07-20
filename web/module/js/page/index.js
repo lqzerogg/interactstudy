@@ -2,6 +2,7 @@
 {{> ranking_list}}
 {{> footer}}
 {{> searcher}}
+{{> carousel}}
 
 jQuery(function($) {
 	var setting = window.setting;
