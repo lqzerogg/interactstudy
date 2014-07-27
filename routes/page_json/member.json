@@ -1,0 +1,22 @@
+{
+	"header": {
+
+		"linkIndex": "xxxxx",      
+		"linkCourse": "xxxx",      
+		"linkClassRoom": "xxxx",   
+		"linkOrganization": "xxxx",
+		"isLogin": true,           
+		"linkRegister": "xxxx",    
+		"linkLogin": "xxxx",       
+		"username": "jackmot"      
+	},
+	"crumbs": [
+		{
+			"link": "#crumbs1",
+			"desc": "首页"
+		}
+	],
+	"searcher": {
+		"linkSearch": "xxxx"           			
+	}
+}

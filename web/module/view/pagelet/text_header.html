@@ -1,0 +1,49 @@
+{{#header}}
+<div class="top">
+  <div class="box">
+    <div class="logo"><img src="/img/logo_text.png" width="211" height="59"></div>
+    <div class="nav">
+      <ul>
+        <li class="nav_focus"><a href="{{linkIndex}}">极动首页</a></li>
+        <li><a href="{{linkCourse}}">课程中心</a></li>
+        <li><a href="{{linkClassRoom}}">教室广场</a></li>
+        <li><span class="new"></span><a href="{{linkOrganization}}">极动社团</a></li>
+      </ul>
+    </div>
+    {{#isLogin}}
+    <div class="Login">
+      <span class="name">您好，{{username}}</span>{{/isLogin}}
+    </div>
+    {{^isLogin}}
+    <div class="Login"><a href="{{linkLogin}}">登录</a><a href="{{linkRegister}}" class="none-b">注册</a></div>
+    {{/isLogin}}
+  </div>
+</div>
+{{/header}}
+<div class="fn">
+  <div class="box">
+    <div class="crumbs">
+      {{#crumbs}}
+      <a href="{{link}}">{{desc}}</a>
+      {{/crumbs}}
+    </div>
+    {{#searcher}}
+    <div class="s_btn"><a href="{{linkSearch}}">搜一搜</a></div>
+    <div class="search_box">
+      <dl class="select1">
+        <dt>分类</dt>
+        <dd>
+          <ul>
+            <li><a href="javascrip:;" data-type="course">课程</a></li>
+            <li><a href="javascrip:;" data-type="training">培训机构</a></li>
+            <li><a href="javascrip:;" data-type="organization">社团</a></li>
+            <li><a href="javascrip:;" data-type="discussion">主题讨论</a></li>
+          </ul>
+        </dd>
+      </dl>
+      <input title="请输入课程名称，主题或感兴趣的" type="text" class="s_a" value="请输入课程名称，主题或感兴趣的" onfocus="if(this.value == '请输入课程名称，主题或感兴趣的'){this.value = '';this.className = 's_b';}else{this.className = 's_b';}"
+                                    onblur="if(this.value == ''){this.value = '请输入课程名称，主题或感兴趣的';this.className = 's_a';}else{this.className = 's_b';}" />
+    </div>
+    {{/searcher}}
+  </div>
+</div>

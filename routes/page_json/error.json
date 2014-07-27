@@ -1,0 +1,16 @@
+{
+	"header": {
+
+		"linkIndex": "#index",      
+		"linkCourse": "#course",      
+		"linkClassRoom": "#room",   
+		"linkOrganization": "#organize",
+		"isLogin": true,           
+		"linkRegister": "#register",    
+		"linkLogin": "#login",       
+		"username": "jackmot"      
+	},
+	"searcher": {
+		"linkSearch": "xxxx"           			
+	}
+}

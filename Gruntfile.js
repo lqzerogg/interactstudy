@@ -127,7 +127,8 @@ module.exports = function(grunt) {      // Project configuration.
                 sourceMapName: '<%= meta.proJs %>index.map'
               },
               files: {
-                '<%= meta.proJs %>index.js': ['<%= meta.jsPath %>index.js']
+                '<%= meta.proJs %>index.js': ['<%= meta.jsPath %>index.js'],
+                '<%= meta.proJs %>parameter.js': ['<%= meta.jsPath %>parameter.js']
               }
             },
             lib: {
@@ -140,7 +141,8 @@ module.exports = function(grunt) {      // Project configuration.
                 '<%= meta.proJs %>lib/doT.js': ['<%= meta.jsPath %>lib/doT.js'],
                 '<%= meta.proJs %>lib/jquery.js': ['<%= meta.jsPath %>lib/jquery.js'],
                 '<%= meta.proJs %>lib/modernizr.js': ['<%= meta.jsPath %>lib/modernizr.js'],
-                '<%= meta.proJs %>lib/require.js': ['<%= meta.jsPath %>lib/require.js']
+                '<%= meta.proJs %>lib/require.js': ['<%= meta.jsPath %>lib/require.js'],
+                '<%= meta.proJs %>lib/jquery.pack.js': ['<%= meta.jsPath %>lib/jquery.SuperSlide.js']
               }
             }
         },

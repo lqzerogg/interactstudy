@@ -22,8 +22,7 @@ ol, ul {
 栅格样式
  */
 .container-fluid {
-	min-width: 1000px * $size-unit;
-	max-width: 1240px * $size-unit;
+	width: 1240px * $size-unit;	
 	margin: auto;
 	padding: 0 20px * $size-unit;
 }

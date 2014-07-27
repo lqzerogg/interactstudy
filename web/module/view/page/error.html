@@ -1,69 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>互动教室</title>
-    <!-- meta data todo-->
-    <!-- meta data -->
-    {{> lib_css}}
-    <link rel='stylesheet' href='/css/index.css' />
-    <!--[if lt IE 8]>
-      <link rel='stylesheet' href='/css/index_ie6.css' />
-    <![endif]-->
-  </head>
-  <body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>极动教室</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
 
-    
-    <div class="container-fluid recommander">
-      
-      <div class="row">
-        <div class="col-md-10">
-          <div class="item-list">
-  <div class="clearfix category-wrapper">
-    <p class="caption"></p>    
-  </div>
-  <style>
-    .stars, .star-black, .star-yellow {
-      display: block !important;
-      width: 100%;
-      height: 20px;      
-    }
-    span {
-      color: yellow !important;
-    }
-    
-    .glyphicon-stars:before {
-      content: "\e006" !important;
-      width: auto !important;
-    }
-  </style>
-  <ol class="list i-list clearfix"> 
-      
-      <li class="item"><div class="image-wrapper"><a target="_blank" href="#"><img src="http://img.yacol.com/export/sites/yacol/life/images/bjjy1.jpg" alt="梵高教你星夜7"></a><div class="name clearfix"><a href="#">
-      <span class="text">梵高教你星夜7</span>
-      <span class="glyphicon glyphicon-star"></span>
-      <span class="stars stars-3 clearfix">
-      <em class="star glyphicon-stars glyphicon"></em>
-      <em class="star glyphicon-stars glyphicon"></em>
-      </span>
-      </a></div></div><div class="desc"><p class="teacher">授课老师：黄小雄7</p><p class="stu-num">报名人数：<span>2916</span>人</p></div></li>
-      
-  </ol>
-</div>
+<link href="/css/public.css" rel="stylesheet" type="text/css">
+<link href="/css/Course.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<!--页头开始-->
+
+{{> text_header}}
 
 
+<!--页头结束-->
 
+<div class="p_404"></div>
 
+{{> text_footer}} 
 
-        </div>        
-      </div>
-      
-      
-    </div> 
-    
-
-
-    
-    {{> lib_js}}
-    <script type="text/javascript" src="/js/index.js"></script>
-  </body>
+<script type="text/javascript"  src="/js/lib/jquery.pack.js"></script> 
+<script type="text/javascript"  src="/js/parameter.js"></script>
+</body>
 </html>

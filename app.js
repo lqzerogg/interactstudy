@@ -5,7 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cons = require('consolidate');
-var router = require('./router');
+var router = require('./routes/router');
+var fs = require('fs');
 //debug
 var util = require('util');
 //debug
@@ -27,10 +28,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/web/public')));
 
-router.init(app);   
-app.use('/teachroom2/coursesFind', require('./routes/get_courses'));
-app.use('/teachroom2/organizationsFind', require('./routes/get_comunities'));
-app.use('/teachroom2/coursesRanking', require('./routes/get_course_ranking'));
+app.use('/', router);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -46,21 +44,23 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+        res.render(pathName, json);
     });
 }
 
 // production error handler
 // no stacktraces leaked to user
+var errJson = {};
+fs.readFile('./routes/page_json/error.json', function(err, data) {
+    if(err) throw err;
+    // console.log(v);
+    // console.log('~~~~~~~');
+    // console.log(data);
+    errJson = JSON.parse(data);
+});
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+    res.render('error', errJson);
 });
 
 
