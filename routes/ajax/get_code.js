@@ -1,5 +1,11 @@
 
 /* GET home page. */
+//ajax接口
+var result = {
+	//获取验证码图片
+	"result": true,
+	"src": "xxxx"
+}
 var exports = {
 	key: '/getCode',
 	response: function(req, res) {
