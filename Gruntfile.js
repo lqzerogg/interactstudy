@@ -2,11 +2,11 @@ module.exports = function(grunt) {      // Project configuration.
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-includes');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-includes');    
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     // grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.registerTask('default', ['sass', 'includes', 'copy:jsLib', 'copy:production', 'uglify']);
 
 
 
@@ -32,11 +32,11 @@ module.exports = function(grunt) {      // Project configuration.
         },          
         // banner
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-                '* Copyright (c) <%= grunt.template.today("yyyy") %> ',
+                '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
         // sass编译
         sass: {
             bootstrap: {
+                
                 files: { 
                     "<%= meta.cssPath %>lib/bootstrap.css": "<%= meta.sassPath %>lib/bootstrap/bootstrap.scss",
                     "<%= meta.cssPath %>lib/bootstrap-ie7.css": "<%= meta.sassPath %>lib/bootstrap/ie/bootstrap-ie7.css",
@@ -44,6 +44,7 @@ module.exports = function(grunt) {      // Project configuration.
                 options: { 
                     sourcemap: "true",
                     trace: true,
+                    // banner: '/*! compiling bootstrap-ie7otstrap and bootstrap-ie7 */',
                     loadPath: ["<%= meta.sassPath %>lib/bootstrap"]
                     ,style: 'compressed'
                 }
@@ -55,15 +56,13 @@ module.exports = function(grunt) {      // Project configuration.
                     cwd: '<%= meta.sassPath %>page/',
                     src: ['*.scss'],
                     dest: '<%= meta.cssPath %>',
-                    ext: '.css',
-                    loadPath: ["<%= meta.sassPath %>pagelet/"]
+                    ext: '.css'                    
                 }],
-
-                options: { 
+                options: {
+                    loadPath: ["<%= meta.sassPath %>pagelet/"],
                     sourcemap: "true",
                     trace: true,
-                    loadPath: ["<%= meta.sassPath %>pagelet/"]
-                    ,style: 'compressed'
+                    style: 'compressed'
                 }
             }
         },
@@ -75,36 +74,13 @@ module.exports = function(grunt) {      // Project configuration.
                 dest: '<%= meta.pagePath %>',
                 options: {
                     flatten: true,
+                    // banner: '/*! compiling html of every page */',
                     includePath: '<%= meta.tplPath %>pagelet/',
                     filenameSuffix: '.html',
                     includeRegexp: /^(\s*)\{{2}>\s+(\S+)\s*\}{2}$/,
                     banner: ''
                 }
-            },
-            //js libary
-            jsLib: {
-                cwd: '<%= meta.jsModPath %>lib/',
-                src: [ '*.js'],
-                dest: '<%= meta.jsPath %>lib/',
-                options: {
-                    flatten: true,
-                    filenameSuffix: '.js',
-                    includeRegexp: /^(\s*)\{{2}>\s+(\S+)\s*\}{2}$/,
-                    banner: ''
-                }
-            },
-            //for ie fix
-            htc: {
-                cwd: '<%= meta.jsModPath %>lib/',
-                src: [ '*.htc'],
-                dest: '<%= meta.jsPath %>lib/',
-                options: {
-                    flatten: true,
-                    filenameSuffix: '.htc',
-                    includeRegexp: /^(\s*)\{{2}>\s+(\S+)\s*\}{2}$/,
-                    banner: ''
-                }
-            },
+            },            
             //js
             js: {
                 cwd: '<%= meta.jsModPath %>page',
@@ -120,46 +96,40 @@ module.exports = function(grunt) {      // Project configuration.
             }
         },
 
+        //压缩文件
         uglify: {
-            index: {
-              options: {
-                sourceMap: true,
-                sourceMapName: '<%= meta.proJs %>index.map'
-              },
-              files: {
-                '<%= meta.proJs %>index.js': ['<%= meta.jsPath %>index.js'],
-                '<%= meta.proJs %>parameter.js': ['<%= meta.jsPath %>parameter.js']
-              }
-            },
-            lib: {
-              options: {
-                sourceMap: true,
-                sourceMapName: '<%= meta.proJs %>lib/lib.map'
-              },
-              files: {
-                '<%= meta.proJs %>lib/bootstrap.js': ['<%= meta.jsPath %>lib/bootstrap.js'],
-                '<%= meta.proJs %>lib/doT.js': ['<%= meta.jsPath %>lib/doT.js'],
-                '<%= meta.proJs %>lib/jquery.js': ['<%= meta.jsPath %>lib/jquery.js'],
-                '<%= meta.proJs %>lib/modernizr.js': ['<%= meta.jsPath %>lib/modernizr.js'],
-                '<%= meta.proJs %>lib/require.js': ['<%= meta.jsPath %>lib/require.js'],
-                '<%= meta.proJs %>lib/jquery.pack.js': ['<%= meta.jsPath %>lib/jquery.SuperSlide.js']
-              }
+            compress: {
+                files: [{
+                    expand:true,
+                    cwd:'<%= meta.jsPath %>',//js目录下
+                    src:'**/*.js',//所有js文件
+                    dest: '<%= meta.proJs %>'//输出到此目录下
+                }]
             }
         },
+        //copy文件
         copy: {
-          main: {
+            // copy到production
+          production: {
             files: [
-                {expand: true, src: ['web/**/*', 'web/***/*'], dest: 'production/'}
-                // {expand: true, src: ['<%= meta.jsPath %>lib/*'], dest: '<%= meta.proJs %>lib/'},
-                // {expand: true, src: ['<%= meta.cssPath %>*'], dest: '<%= meta.proCss %>/'},
-                // {expand: true, src: ['<%= meta.cssPath %>lib/*'], dest: '<%= meta.proCss %>lib/'},
-                // {expand: true, src: ['<%= meta.pagePath %>*'], dest: '<%= meta.proPage %>/'},
-                // {expand: true, src: ['<%= meta.pubPath %>img/*'], dest: '<%= meta.proPublic %>img/'},
-                // {expand: true, src: ['<%= meta.pubPath %>fonts/*'], dest: '<%= meta.proPublic %>fonts/'}
-                
-            ]
-            
+                {
+                    expand: true, 
+                    src: ['web/**/*', 'web/***/*'], 
+                    dest: 'production/'
+                }               
+            ]            
           },
+          //copy jsLibary到static中
+          jsLib: {
+            files: [
+                {   
+                    cwd:'<%= meta.jsModPath %>',//js目录下
+                    src: ['lib/**/*.js'],
+                    dest: '<%= meta.jsPath %>/',
+                    expand: true
+                }
+            ]
+          }
         },
         
 
@@ -179,24 +149,20 @@ module.exports = function(grunt) {      // Project configuration.
         // watch 更变
         watch: { 
             css: {  
-                files: [ 
-                    "<%= meta.sassPath %>*.scss",
-                    "<%= meta.sassPath %>*/*.scss",
-                    "<%= meta.sassPath %>*/*/*.css" 
+                files: [                     
+                    "<%= meta.sassPath %>**/*.scss"
                 ],
                 tasks: ["sass"]
             },
             html: {
                 files: [
-                    "<%= meta.tplPath %>*.html",
-                    "<%= meta.tplPath %>*/*.html"
+                    "<%= meta.tplPath %>**/*.html"
                 ],
                 tasks: ["includes"]
             },
             js: {
                 files: [
-                    "<%= meta.jsModPath %>*/*.js",
-                    "<%= meta.jsModPath %>*/*.htc"
+                    "<%= meta.jsModPath %>**/*.js"
                 ],
                 tasks: ["includes"]
             }
