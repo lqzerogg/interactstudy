@@ -1,7 +1,10 @@
 {
+	"setting": {
+		"messageUrl": "/member/message"			
+	},
 	"header": {
 
-		"linkIndex": "xxxxx",      
+		"linkIndex": "eeee",      
 		"linkCourse": "xxxx",      
 		"linkClassRoom": "xxxx",   
 		"linkOrganization": "xxxx",
@@ -18,5 +21,22 @@
 	],
 	"searcher": {
 		"linkSearch": "xxxx"           			
-	}
+	},
+    "leftMenu": {
+        "username": "黄小雄",
+        "fans": 55686,
+        "follow": 185,
+        "mybook": "member_course.html",
+        "myfav": "#",
+        "mycomment": "#",
+        "mygroup": "#",
+        "setup": "member_setup.html",
+        "message": "member.html"
+        
+    },
+    "noticeTop": {
+        "notRead": 11,
+        "sysMessage": 46,
+        "comment": 46
+    }
 }
