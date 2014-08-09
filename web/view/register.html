@@ -5,8 +5,24 @@
 <title>极动教室</title>
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
-<link href="/css/public.css" rel="stylesheet" type="text/css">
-<link href="/css/course.css" rel="stylesheet" type="text/css">
+<link href="{{path}}/css/public.css" rel="stylesheet" type="text/css">
+<link href="{{path}}/css/course.css" rel="stylesheet" type="text/css">
+<script text="text/javascript">
+  {{#setting}}
+  var setting = {
+    "getCodeUrl": "{{getCodeUrl}}", /*获取验证码接口*/
+    "registerUrl": "{{registerUrl}}",  /*注册接口*/
+    "checkUrl": "{{checkUrl}}",        /*验证字段接口*/
+    "getAddressUrl": "{{getAddressUrl}}",  /*获取地址接口*/
+    "linkAuthentication": "{{linkAuthentication}}" /*邮箱验证页地址*/
+  }
+  {{/setting}}
+</script>
+<style>
+  .error .t_r {
+    color: red;
+  }
+</style>
 </head>
 <body>
 
@@ -72,37 +88,38 @@
       <div class="r_a">1、填写用户信息 </div>
       <div class="r_b">2、完成账户信息验证 </div>
     </div>
-    <div class="o5">
+    <form id="form" action="">
+      <div class="o5">
       <div class="re_box">
         <div class="re_float">必填</div>
         <div class="text_box">
           <p class="t_l"><em>*</em>输入邮箱：</p>
           <p class="t_c">
-            <input name="" type="text" class="r_text">
+            <input id="email" name="email" required="true" place-holder="example@gmail.com" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" data-err="邮箱已经被注册" remote="true" type="text" class="r_text" data-pass="true">
           </p>
-          <p class="t_r">验证邮箱，方便注册 </p>
+          <p class="t_r" data-desc="验证邮箱，方便注册">验证邮箱，方便注册 </p>
         </div>
         <div class="text_box">
           <p class="t_l"><em>*</em>输入密码：</p>
           <p class="t_c">
-            <input name="" type="text" class="r_text">
+            <input id="password" name="password" required="true" place-holder="123Abc" data-err="含非法字符" pattern="^\w{6,22}$" type="password" class="r_text">
           </p>
-          <p class="t_r">6到22位密码，包含英文、数字<br>
+          <p class="t_r" data-desc="6到22位密码，包含英文、数字">6到22位密码，包含英文、数字<br>
           </p>
         </div>
         <div class="text_box">
           <p class="t_l"><em>*</em>重复密码：</p>
           <p class="t_c">
-            <input name="" type="text" class="r_text">
+            <input id="verifypsw" required place-holder="123Abc" data-err="两次密码不一致" pattern="^\w{6,22}$" name="verifypsw"  data-pass="true" remote="true" type="password" class="r_text">
           </p>
-          <p class="t_r">确认一次密码 </p>
+          <p class="t_r" data-desc="确认一次密码">确认一次密码 </p>
         </div>
         <div class="text_box">
           <p class="t_l"><em>*</em>用户名：</p>
           <p class="t_c">
-            <input name="" type="text" class="r_text">
+            <input id="username" required place-holder="Blacky" data-err="该用户名已经存在" name="username" pattern="[\w\u4E00-\u9FFF]{2,22}" remote="true" type="text" data-pass="true" class="r_text">
           </p>
-          <p class="t_r"> </p>
+          <p class="t_r" data-desc="2-22个数字、字母或者汉字">2-22个数字、字母或者汉字</p>
         </div>
       </div>
       <div class="re_box">
@@ -110,15 +127,15 @@
         <div class="text_box">
           <p class="t_l">地址：</p>
           <p class="t_c">
-            <select class="select_b">
-              <option>广州市</option>
+            <select id="city" class="select_b" name="city">
+              <option value="">请选择</option>
             </select>
-            <select class="select_b" name="">
-              <option>海珠区</option>
+            <select id="district" class="select_b" name="district">
+              <option value="">请选择</option>
             </select>
-            <input name="input" type="text" class="r_text" style="width:80px">
+            <input type="text" name="road" class="r_text" style="width:80px">
             路（街）
-            <input name="input" type="text" class="r_text"  style="width:80px">
+            <input name="doorplate" type="text" class="r_text"  style="width:80px">
             号 </p>
         </div>
         <div class="text_box">
@@ -143,25 +160,35 @@
         <div class="text_box">
           <p class="t_l"><em>*</em>验证码：</p>
           <p class="t_c">
-            <input name="input2" type="text" class="r_text" style="width:80px">
+            <input id="code" name="code" required="true" place-holder="1234" data-err="输入不匹配" type="text" class="r_text" remote="true" data-pass="true" style="width:80px">
+            &nbsp;&nbsp;
+            <img id="identify-code" style="vertical-align: bottom;" src="" width="93" height="30">
+            <span class="o1" style="vertical-align: bottom;"><a id="btn-change" href="#">换一换</a></span>
           </p>
-          <p class="t_r"><img src="/img/ss1.png" width="93" height="30"></p>
-          <span class="o1"><a href="#">换一换</a></span></div>
+          <p class="t_r" data-desc=""></p>
+          
+          </div>
         <div class="text_box">
           <p class="t_l">&nbsp;</p>
-          <p class="t_c"><a href="register_authentication.html"><img src="/img/btn_a.png" width="120" height="40"></a></p>
+          <p class="t_c"><a id="submit" href="#"><img src="{{path}}/img/btn_a.png" width="120" height="40"></a></p>
         </div>
-        <div class="checkbox_a">
-          <input name="" type="checkbox" value="">
-          &nbsp;&nbsp;<a href="#">我已同意极动教室使用协议</a> </div>
+        <div class="checkbox_a text_box">
+          <p class="t_c">
+            <input name="protocol" id="protocol" type="checkbox" value="">
+          &nbsp;&nbsp;<a href="{{linkProtocol}}">我已同意极动教室使用协议</a>
+          </p>
+          <p class="t_r">同意请勾选</p>
+        </div>
       </div>
     </div>
+    </form>
+    
   </div>
   <div class="right">
-    <p class="o2">免注册快速登录通道</p>
-    <p class="o3"><a href="#"><img src="/img/QQ.png" width="127" height="24"></a></p>
-    <p class="o3"><a href="#"><img src="/img/wb.png" width="126" height="24"></a></p>
-    <p class="o4"><a href="#">已有账户？请登录</a></p>
+      <p class="o2">免注册快速登录通道</p>
+      <p class="o3"><a href="#"><img src="/img/QQ.png" width="127" height="24"></a></p>
+      <p class="o3"><a href="#"><img src="/img/wb.png" width="126" height="24"></a></p>
+      <p class="o4"><a href="{{header.linkLogin}}">已有账户？请登录</a></p>
   </div>
 </div>
 
@@ -177,7 +204,9 @@
 <!--页尾结束--> 
 
 
-<script type="text/javascript"  src="/js/lib/jquery.pack.js"></script> 
-<script type="text/javascript"  src="/js/parameter.js"></script>
+<script type="text/javascript"  src="{{path}}/js/lib/jquery.pack.js"></script> 
+<script type="text/javascript"  src="{{path}}/js/parameter.js"></script>
+<script type="text/javascript"  src="{{path}}/js/lib/doT.js"></script>
+<script type="text/javascript"  src="{{path}}/js/register.js"></script>
 </body>
 </html>

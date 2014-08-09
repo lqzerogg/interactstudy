@@ -1,4 +1,11 @@
 {
+	"setting": {
+		"getCodeUrl": "/getCode", 
+		"registerUrl": "/ajax_register",  
+		"checkUrl": "/check",        
+		"getAddressUrl": "/getAddress",  
+		"linkAuthentication": "/register_authentication" 
+	},
 	"header": {
 
 		"linkIndex": "xxxxx",      
@@ -18,5 +25,6 @@
 	],
 	"searcher": {
 		"linkSearch": "xxxx"           			
-	}
+	},
+	"linkProtocol": "xxxxxx"   
 }

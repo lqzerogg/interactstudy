@@ -33,6 +33,7 @@ fs.readdir('./routes/page_json', function(err, files) {
 			// console.log('~~~~~~~');
 			// console.log(data);
 			json = JSON.parse(data);
+			json.path = '';
 		});
 
 	});
@@ -49,7 +50,8 @@ fs.readdir('./routes/ajax', function(err, files) {
 	ajax.forEach(function(v, i) {
 		var name = v.split('.')[0];		
 		var action = require('./ajax/' + v);
-		router.use(action.key, action.response);		
+		router.get(action.key, action.response);		
+		router.post(action.key, action.response);		
 	});
 });
 // ajax请求初始化

@@ -1,0 +1,30 @@
+{
+	"setting": {
+		"getCodeUrl": "/getCode", /*获取验证码接口*/
+		"registerUrl": "/register",  /*注册接口*/
+		"checkUrl": "/check",        /*验证字段接口*/
+		"getAddressUrl": "/getAddress",  /*获取地址接口*/
+		"linkAuthentication": "/register_authentication" /*邮箱验证页地址*/
+	},
+	"header": {
+
+		"linkIndex": "xxxxx",      /*首页地址*/
+		"linkCourse": "xxxx",      /*课程中心地址*/
+		"linkClassRoom": "xxxx",   /*教室广场地址*/
+		"linkOrganization": "xxxx",/*极动社区地址*/
+		"isLogin": true,           /*是否已登录*/
+		"linkRegister": "xxxx",    /*注册地址*/
+		"linkLogin": "xxxx",       /*登陆地址*/
+		"username": "jackmot"      /*如果已登录，用户名，否则无	*/
+	},
+	"crumbs": [
+		{
+			"link": "#crumbs1",
+			"desc": "首页"
+		}
+	],
+	"searcher": {
+		"linkSearch": "xxxx"           /*搜索地址 */			
+	},
+	"linkProtocol": "xxxxxx"   /*使用协议地址*/
+}
