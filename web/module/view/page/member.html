@@ -5,61 +5,71 @@
 <title>极动教室</title>
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
-<link href="/css/public.css" rel="stylesheet" type="text/css">
-<link href="/css/member.css" rel="stylesheet" type="text/css">
+<link href="{{path}}/css/public.css" rel="stylesheet" type="text/css">
+<link href="{{path}}/css/member.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    {{#setting}}
+    var setting = {
+      "messageUrl": "{{messageUrl}}",
+    };
+    {{/setting}}
+</script>
 </head>
 <body>
 
 <!--页头开始-->
 {{> text_header}}
 <!--页头结束-->
-
 <div class="member">
+  {{#leftMenu}}
   <div class="left">
     <div class="m1">
       <p><img src="/img/member_icon.png" width="120" height="120"></p>
-      <p>黄小雄</p>
+      <p>{{username}}</p>
     </div>
     <div class="m2">
       <div class="m2_l">
-        <p class="m2_t">55686</p>
+        <p class="m2_t">{{fans}}</p>
         <p>粉丝</p>
       </div>
       <div class="m2_r">
-        <p class="m2_t">185</p>
+        <p class="m2_t">{{follow}}</p>
         <p>关注</p>
       </div>
     </div>
     <div class="m3">
       <ul>
         <li>
-          <p class="m_icon1"><a href="member_course.html">我的预约</a></p>
+          <p class="m_icon1"><a href="{{mybook}}">我的预约</a></p>
         </li>
         <li>
-          <p class="m_icon2"><a href="#">我的收藏</a></p>
+          <p class="m_icon2"><a href="{{myfav}}">我的收藏</a></p>
         </li>
         <li>
-          <p class="m_icon3"><a href="#">我的评论</a></p>
+          <p class="m_icon3"><a href="{{mycomment}}">我的评论</a></p>
         </li>
         <li>
-          <p class="m_icon4"><a href="#">我的社团</a></p>
+          <p class="m_icon4"><a href="{{mygroup}}">我的社团</a></p>
         </li>
         <li>
-          <p class="m_icon5"><a href="member_setup.html">个人设置</a></p>
+          <p class="m_icon5"><a href="{{setup}}">个人设置</a></p>
         </li>
         <li  class="m3_hover">
-          <p class="m_icon6"><a href="member.html">消息公告</a></p>
+          <p class="m_icon6"><a href="{{message}}">消息公告</a></p>
         </li>
       </ul>
     </div>
   </div>
+  {{/leftMenu}}
   <div class="right">
+    {{#noticeTop}}
     <div class="me1">
       <p class="e1">消息公告</p>
-      <p class="e2">您有<em><a href="#">11</a></em>条未读消息</p>
-      <p class="e4">系统消息：<em><a href="#">46</a></em>条</p>
-      <p class="e3">私人消息：<em><a href="#">46</a></em>条</p>
+      <p class="e2">您有<em><a href="#">{{notRead}}</a></em>条未读消息</p>
+      <p class="e4">系统消息：<em><a href="#">{{sysMessage}}</a></em>条</p>
+      <p class="e3">私人消息：<em><a href="#">{{comment}}</a></em>条</p>
     </div>
+    {{/noticeTop}}
     <div class="e5">
       <div class="t1">消息</div>
       <div class="t2">&nbsp;</div>
@@ -67,181 +77,24 @@
       <div class="t4">时间</div>
       <div class="t5"></div>
     </div>
-    <div class="message">
-      <div class="m_box">
-        <div class="mes_1"><span><img src="/img/member_icona.png" width="36" height="36"></span><span>黄小雄</span></div>
-        <div class="mes_2">关于极动教室用户个人中心的问题</div>
-        <div class="mes_3">
-          <p class="mes_btn">私人消息</p>
-        </div>
-        <div class="mes_4">2014-5-1  10:00</div>
-        <div class="mes_5">
-          <p class="mes_btn1"><a href="javascript:;">&nbsp;</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="mes_show">
-      <p>我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？
-        我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？</p>
-      <p><a href="#">回复</a><a href="#">删除</a></p>
+    <div id="msg-list">
+
     </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="message">
-      <div class="m_box">
-        <div class="mes_1"><span><img src="/img/member_icona.png" width="36" height="36"></span><span>黄小雄</span></div>
-        <div class="mes_2">关于极动教室用户个人中心的问题</div>
-        <div class="mes_3">
-          <p class="mes_btn">私人消息</p>
-        </div>
-        <div class="mes_4">2014-5-1  10:00</div>
-        <div class="mes_5">
-          <p class="mes_btn1"><a href="javascript:;">&nbsp;</a></p>
-        </div>
-      </div>
+    <div class="digg">
+    <!-- <span class="disabled">&lt;&lt;首页</span><span class="disabled">&lt;上一页</span><span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页&gt;</a><a href="#">尾页&gt;&gt;</a> -->
     </div>
-    <div class="mes_show">
-      <p>我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？
-        我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？</p>
-      <p><a href="#">回复</a><a href="#">删除</a></p>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="message">
-      <div class="m_box">
-        <div class="mes_1"><span><img src="/img/member_icona.png" width="36" height="36"></span><span>黄小雄</span></div>
-        <div class="mes_2">关于极动教室用户个人中心的问题</div>
-        <div class="mes_3">
-          <p class="mes_btn">私人消息</p>
-        </div>
-        <div class="mes_4">2014-5-1  10:00</div>
-        <div class="mes_5">
-          <p class="mes_btn1"><a href="javascript:;">&nbsp;</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="mes_show">
-      <p>我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？
-        我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？</p>
-      <p><a href="#">回复</a><a href="#">删除</a></p>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="message">
-      <div class="m_box">
-        <div class="mes_1"><span><img src="/img/member_icona.png" width="36" height="36"></span><span>黄小雄</span></div>
-        <div class="mes_2">关于极动教室用户个人中心的问题</div>
-        <div class="mes_3">
-          <p class="mes_btn">私人消息</p>
-        </div>
-        <div class="mes_4">2014-5-1  10:00</div>
-        <div class="mes_5">
-          <p class="mes_btn1"><a href="javascript:;">&nbsp;</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="mes_show">
-      <p>我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？
-        我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？</p>
-      <p><a href="#">回复</a><a href="#">删除</a></p>
-    </div>   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="message">
-      <div class="m_box">
-        <div class="mes_1"><span><img src="/img/member_icona.png" width="36" height="36"></span><span>黄小雄</span></div>
-        <div class="mes_2">关于极动教室用户个人中心的问题</div>
-        <div class="mes_3">
-          <p class="mes_btn">私人消息</p>
-        </div>
-        <div class="mes_4">2014-5-1  10:00</div>
-        <div class="mes_5">
-          <p class="mes_btn1"><a href="javascript:;">&nbsp;</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="mes_show">
-      <p>我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？
-        我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？</p>
-      <p><a href="#">回复</a><a href="#">删除</a></p>
-    </div>   
-    
-    
-     <div class="message">
-      <div class="m_box">
-        <div class="mes_1"><span><img src="/img/member_icona.png" width="36" height="36"></span><span>黄小雄</span></div>
-        <div class="mes_2">关于极动教室用户个人中心的问题</div>
-        <div class="mes_3">
-          <p class="mes_btn">私人消息</p>
-        </div>
-        <div class="mes_4">2014-5-1  10:00</div>
-        <div class="mes_5">
-          <p class="mes_btn1"><a href="javascript:;">&nbsp;</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="mes_show">
-      <p>我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？
-        我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？我好想你啊，你啥时候教我钢琴啊？</p>
-      <p><a href="#">回复</a><a href="#">删除</a></p>
-    </div>
-    
-    
-    
-    <div class="digg"><span class="disabled">&lt;&lt;首页</span><span class="disabled">&lt;上一页</span><span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页&gt;</a><a href="#">尾页&gt;&gt;</a></div>
     
     
         
   </div>
 </div>
 
-<!--页尾开始-->
-<div class="link"> 友情链接：<a href="#" target="_blank">网易企业邮箱</a><a href="#" target="_blank">网易彩票</a><a href="#" target="_blank">网易优惠券</a><a href="#" target="_blank">企业黄页</a> </div>
-<div class="foot_box">
-  <div class="foot">
-    <div class="left"><a href="#" target="_blank">关于我们</a>- <a href="#" target="_blank">公司简介</a>- <a href="#" target="_blank">联系方式</a>- <a href="#" target="_blank">招聘信息</a>- <a href="#" target="_blank">客户服务</a>- <a href="#" target="_blank">相关法律</a>- <a href="#" target="_blank">网络营销</a>- <a href="#" target="_blank">网站地图</a>- <a href="#" target="_blank">用户体验升级计划</a></div>
-    <div class="right">©1997-2014 极动教室版权所有</div>
-  </div>
-</div>
+{{> text_footer}}
 
-<!--页尾结束--> 
-
-<script type="text/javascript" src="/js/lib/jquery.pack.js"></script> 
-<script type="text/javascript"  src="/js/parameter.js"></script>
-<script type="text/javascript"  src="/js/member.js"></script>
+<script type="text/javascript" src="{{path}}/js/lib/jquery.pack.js"></script> 
+<script type="text/javascript"  src="{{path}}/js/parameter.js"></script>
+<script type="text/javascript" src="{{path}}/js/lib/doT.js"></script>
+<script type="text/javascript"  src="{{path}}/js/member.js"></script>
 </body>
 </html>

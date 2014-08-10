@@ -192,12 +192,6 @@ a:hover {
 	font-weight: normal;
 	color: #FFF;
 }
-.crumbs a::after {
-	content: " / ";
-}
-.crumbs a:last-child::after {
-	content: " ";
-}
 .search_box {
 	float: right;
 	height: 46px;
@@ -355,4 +349,49 @@ a:hover {
 .link a:hover {
 	color: #ff6c04;
 	text-decoration: none;
+}
+.digg {
+	TEXT-ALIGN: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	float: right;
+	font-family: "宋体";
+}
+.digg a {
+	MARGIN: 2px;
+	COLOR: #000000;
+	TEXT-DECORATION: none;
+	border: 1px solid #CCCCCC;
+	background-image: url(../img/btn1.png);
+	background-repeat: repeat-x;
+	padding: 5px;
+}
+.digg a:hover {
+	COLOR: #000;
+	border: 1px solid #CCCCCC;
+}
+.digg a:active {
+	COLOR: #000;
+	border: 1px solid #999999;
+}
+.digg SPAN.current {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 5px;
+	FONT-WEIGHT: bold;
+	PADDING-BOTTOM: 2px;
+	MARGIN: 2px;
+	COLOR: #0046c5;
+	PADDING-TOP: 2px;
+	BACKGROUND-COLOR: #FFFFFF;
+	border: 1px solid #FFFFFF;
+}
+.digg SPAN.disabled {
+	PADDING-RIGHT: 5px;
+	PADDING-LEFT: 5px;
+	PADDING-BOTTOM: 2px;
+	MARGIN: 2px;
+	COLOR: #CCC;
+	PADDING-TOP: 2px;
+	border: 1px solid #f1f1f1;
+	background-color: #FFF;
 }
