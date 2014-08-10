@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>极动教室</title>
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<link href="{{path}}/css/public.css" rel="stylesheet" type="text/css">
+<link href="{{path}}/css/course.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+
+{{> text_header}}
+
+
+
+<ul class="select">
+  <li class="select-list">
+    <dl id="select1">
+      <dt>地区：</dt>
+      <dd><a href="#">全广州</a></dd>
+      <dd><a href="#">天河区</a></dd>
+      <dd><a href="#">越秀区</a></dd>
+            <dd><a href="#">海珠区</a></dd>
+
+      <dd><a href="#">白云区</a></dd>
+
+      <dd><a href="#">番禺区</a></dd>
+      <dd><a href="#">荔湾区</a></dd>
+      <dd><a href="#">花都区</a></dd>
+      <dd><a href="#">黄埔区</a></dd>
+      <dd><a href="#">增城区</a></dd>
+      <dd><a href="#">萝岗区</a></dd>
+      <dd><a href="#">南沙区</a></dd>
+
+    </dl>
+  </li>
+  
+  <li class="select-list">
+    <dl id="select4">
+      <dt>培训类型：</dt>
+      <dd class="hide"><a href="#">不限</a></dd>
+      <dd><a href="#">舞蹈</a></dd>
+      <dd><a href="#">乐器</a></dd>
+      <dd><a href="#">美术</a></dd>
+      <dd><a href="#">声乐</a></dd>
+      <dd><a href="#">表演</a></dd>
+      <dd><a href="#">礼仪</a></dd>
+      <dd><a href="#">摄影</a></dd>
+      <dd><a href="#">艺考</a></dd>
+      <dd><a href="#">DJ</a></dd>
+      <dd><a href="#">茶艺</a></dd>
+      <dd><a href="#">插花</a></dd>
+      <dd><a href="#">烹饪</a></dd>
+      <dd><a href="#">魔术</a></dd>
+      <dd><a href="#">书法</a></dd>
+      <dd><a href="#">风水</a></dd>
+      <dd><a href="#">国学</a></dd>
+      <dd><a href="#">形体</a></dd>
+      <dd><a href="#">园艺</a></dd>
+
+    </dl>
+  </li>
+  <li class="select-list show">
+    <dl id="select3">
+      <dt>&nbsp;</dt>
+      <dd><a href="#">吉它</a></dd>
+      <dd><a href="#">钢琴</a></dd>
+      <dd><a href="#">电子琴</a></dd>
+      <dd><a href="#">小提琴</a></dd>
+      <dd><a href="#">大提琴</a></dd>
+      <dd><a href="#">架子鼓</a></dd>
+      <dd><a href="#">古筝</a></dd>
+      <dd><a href="#">二胡</a></dd>
+      <dd><a href="#">笛子</a></dd>
+      <dd><a href="#">古琴</a></dd>
+      <dd><a href="#">琵琶</a></dd>
+      <dd><a href="#">手风琴</a></dd>
+      <dd><a href="#">葫芦丝</a></dd>
+      <dd><a href="#">埙</a></dd>
+        <dd><a href="#">萧</a></dd>
+      <dd><a href="#">打击乐</a></dd>
+      <dd><a href="#">萨克斯</a></dd>
+      <dd><a href="#">黑管</a></dd>
+      <dd><a href="#">双簧管</a></dd>
+      <dd><a href="#">贝斯</a></dd>
+     
+    </dl>
+  </li>
+  <li class="select-list">
+    <dl id="select2">
+      <dt>课程学费：</dt>
+      <dd><a href="#">不限</a></dd>
+      <dd><a href="#">200元以下</a></dd>
+      <dd><a href="#">200-800元</a></dd>
+      <dd><a href="#">800-5000元</a></dd>
+      <dd><a href="#">5000元以上</a></dd>
+      &nbsp;&nbsp;&nbsp;&nbsp;自定义区间：
+      <input name="" id="s1" type="text" />
+      &nbsp;-&nbsp;
+      <input name="" id="s2" type="text" />
+      <input type="button" id="s3" value="筛选" />
+    </dl>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+   <li class="select-list">
+    <dl id="select5">
+      <dt>授课方式：</dt>
+      <dd><a href="#">不限</a></dd>
+      <dd><a href="#">一对一</a></dd>
+      <dd><a href="#">小班授课</a></dd>
+      <dd><a href="#">寒暑班</a></dd>
+        </dl>
+  </li>
+  
+  
+  
+  
+   <li class="select-list">
+    <dl id="select6">
+      <dt>培训对象：</dt>
+      <dd><a href="#">不限</a></dd>
+      <dd><a href="#">少儿/幼儿</a></dd>
+      <dd><a href="#">成人</a></dd>
+        </dl>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  <li id="alreadySelected" class="select-result">
+    <dl>
+      <dt>已选条件：</dt>
+      <dd id="emptySelector" class="select-no">暂时没有选择过滤条件</dd>
+    </dl>
+  </li>
+</ul>
+<div class="con_box"><span><strong>人气</strong>：
+  <select class="select_a">
+    <option>按人气排序</option>
+  </select>
+  </span> <span>
+  <p  class="j"><em>价格</em></p>
+  </span> <span class="none_bg">
+  <input name="" type="checkbox" value="">
+  &nbsp;&nbsp;只看认证</span></div>
+<div class="co_main">
+  <div class="left">
+    <div class="e_box">
+      <div class="e1">
+        <div class="img_box"><a href="#" target="_blank"><img src="{{path}}/img/img_a.png" width="220" height="130" title="梵高教你星夜"></a>
+          <div class="img_box_ft"> <span class="f1">梵高教你星夜</span> <span class="f2"><em class="x1"></em><em class="x1"></em><em class="x1"></em><em class="x2"></em><em class="x2"></em></span> </div>
+        </div>
+      </div>
+      <div class="e2">
+        <p><a href="#" target="_blank">儿童<em>钢琴</em>课程</a></p>
+        <p>办学机构：刘诗昆钢琴艺术中心</p>
+        <p>办学地点：天河区龙口东路123号</p>
+        <p>参考费用：￥200元/节课</p>
+        <p>简介：禅韵（集团）现拥有佛山市禅韵乐器有限公司、佛山刘诗昆
+          钢琴艺术学校、佛山禅韵（怡景苑）钢琴艺术幼儿园...</p>
+      </div>
+      <div class="e3">
+        <div class="e3_a"><span class="e3_a_1">评分：</span><span class="e3_a_2"><em class="x11"></em><em class="x11"></em><em class="x11"></em><em class="x22"></em><em class="x22"></em></span><span class="e3_a_3">3.5</span></div>
+        <div class="e3_b">热度：共<em>73</em>人参观过</div>
+        <div class="e3_c"><span class="icon_a"><a href="#">我感兴趣</a></span><span class="icon_b"><a href="#">加入对比</a></span></div>
+      </div>
+    </div>
+    <div class="e_box">
+      <div class="e1">
+        <div class="img_box"><a href="#" target="_blank"><img src="{{path}}/img/img_a.png" width="220" height="130" title="梵高教你星夜"></a>
+          <div class="img_box_ft"> <span class="f1">梵高教你星夜</span> <span class="f2"><em class="x1"></em><em class="x1"></em><em class="x1"></em><em class="x2"></em><em class="x2"></em></span> </div>
+        </div>
+      </div>
+      <div class="e2">
+        <p><a href="#" target="_blank">儿童<em>钢琴</em>课程</a></p>
+        <p>办学机构：刘诗昆钢琴艺术中心</p>
+        <p>办学地点：天河区龙口东路123号</p>
+        <p>参考费用：￥200元/节课</p>
+        <p>简介：禅韵（集团）现拥有佛山市禅韵乐器有限公司、佛山刘诗昆
+          钢琴艺术学校、佛山禅韵（怡景苑）钢琴艺术幼儿园...</p>
+      </div>
+      <div class="e3">
+        <div class="e3_a"><span class="e3_a_1">评分：</span><span class="e3_a_2"><em class="x11"></em><em class="x11"></em><em class="x11"></em><em class="x22"></em><em class="x22"></em></span><span class="e3_a_3">3.5</span></div>
+        <div class="e3_b">热度：共<em>73</em>人参观过</div>
+        <div class="e3_c"><span class="icon_a"><a href="#">我感兴趣</a></span><span class="icon_b"><a href="#">加入对比</a></span></div>
+      </div>
+    </div>
+    <div class="e_box">
+      <div class="e1">
+        <div class="img_box"><a href="#" target="_blank"><img src="{{path}}/img/img_a.png" width="220" height="130" title="梵高教你星夜"></a>
+          <div class="img_box_ft"> <span class="f1">梵高教你星夜</span> <span class="f2"><em class="x1"></em><em class="x1"></em><em class="x1"></em><em class="x2"></em><em class="x2"></em></span> </div>
+        </div>
+      </div>
+      <div class="e2">
+        <p><a href="#" target="_blank">儿童<em>钢琴</em>课程</a></p>
+        <p>办学机构：刘诗昆钢琴艺术中心</p>
+        <p>办学地点：天河区龙口东路123号</p>
+        <p>参考费用：￥200元/节课</p>
+        <p>简介：禅韵（集团）现拥有佛山市禅韵乐器有限公司、佛山刘诗昆
+          钢琴艺术学校、佛山禅韵（怡景苑）钢琴艺术幼儿园...</p>
+      </div>
+      <div class="e3">
+        <div class="e3_a"><span class="e3_a_1">评分：</span><span class="e3_a_2"><em class="x11"></em><em class="x11"></em><em class="x11"></em><em class="x22"></em><em class="x22"></em></span><span class="e3_a_3">3.5</span></div>
+        <div class="e3_b">热度：共<em>73</em>人参观过</div>
+        <div class="e3_c"><span class="icon_a"><a href="#">我感兴趣</a></span><span class="icon_b"><a href="#">加入对比</a></span></div>
+      </div>
+    </div>
+    <div class="e_box">
+      <div class="e1">
+        <div class="img_box"><a href="#" target="_blank"><img src="{{path}}/img/img_a.png" width="220" height="130" title="梵高教你星夜"></a>
+          <div class="img_box_ft"> <span class="f1">梵高教你星夜</span> <span class="f2"><em class="x1"></em><em class="x1"></em><em class="x1"></em><em class="x2"></em><em class="x2"></em></span> </div>
+        </div>
+      </div>
+      <div class="e2">
+        <p><a href="#" target="_blank">儿童<em>钢琴</em>课程</a></p>
+        <p>办学机构：刘诗昆钢琴艺术中心</p>
+        <p>办学地点：天河区龙口东路123号</p>
+        <p>参考费用：￥200元/节课</p>
+        <p>简介：禅韵（集团）现拥有佛山市禅韵乐器有限公司、佛山刘诗昆
+          钢琴艺术学校、佛山禅韵（怡景苑）钢琴艺术幼儿园...</p>
+      </div>
+      <div class="e3">
+        <div class="e3_a"><span class="e3_a_1">评分：</span><span class="e3_a_2"><em class="x11"></em><em class="x11"></em><em class="x11"></em><em class="x22"></em><em class="x22"></em></span><span class="e3_a_3">3.5</span></div>
+        <div class="e3_b">热度：共<em>73</em>人参观过</div>
+        <div class="e3_c"><span class="icon_a"><a href="#">我感兴趣</a></span><span class="icon_b"><a href="#">加入对比</a></span></div>
+      </div>
+    </div>
+    <div class="e_box">
+      <div class="e1">
+        <div class="img_box"><a href="#" target="_blank"><img src="{{path}}/img/img_a.png" width="220" height="130" title="梵高教你星夜"></a>
+          <div class="img_box_ft"> <span class="f1">梵高教你星夜</span> <span class="f2"><em class="x1"></em><em class="x1"></em><em class="x1"></em><em class="x2"></em><em class="x2"></em></span> </div>
+        </div>
+      </div>
+      <div class="e2">
+        <p><a href="#" target="_blank">儿童<em>钢琴</em>课程</a></p>
+        <p>办学机构：刘诗昆钢琴艺术中心</p>
+        <p>办学地点：天河区龙口东路123号</p>
+        <p>参考费用：￥200元/节课</p>
+        <p>简介：禅韵（集团）现拥有佛山市禅韵乐器有限公司、佛山刘诗昆
+          钢琴艺术学校、佛山禅韵（怡景苑）钢琴艺术幼儿园...</p>
+      </div>
+      <div class="e3">
+        <div class="e3_a"><span class="e3_a_1">评分：</span><span class="e3_a_2"><em class="x11"></em><em class="x11"></em><em class="x11"></em><em class="x22"></em><em class="x22"></em></span><span class="e3_a_3">3.5</span></div>
+        <div class="e3_b">热度：共<em>73</em>人参观过</div>
+        <div class="e3_c"><span class="icon_a"><a href="#">我感兴趣</a></span><span class="icon_b"><a href="#">加入对比</a></span></div>
+      </div>
+    </div>
+    <div class="digg"><span class="disabled">&lt;&lt;首页</span><span class="disabled">&lt;上一页</span><span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页&gt;</a><a href="#">尾页&gt;&gt;</a></div>
+  </div>
+  <div class="right">
+    <div class="ad_s"><img src="{{path}}/img/ad_a.png" width="300" height="180" title="孩子免费就读欧美名校"></div>
+    <div class="Like">猜你喜欢</div>
+    <div class="Like_box"><a href="#" target="_blank"><img src="{{path}}/img/ad_b.png" width="300" height="180" title="计算广告学"></a>
+      <div class="Like_titel">计算广告学</div>
+    </div>
+    <div class="Like_box"><a href="#" target="_blank"><img src="{{path}}/img/ad_b.png" width="300" height="180" title="计算广告学"></a>
+      <div class="Like_titel">计算广告学</div>
+    </div>
+  </div>
+</div>
+
+{{> text_footer}}
+
+
+<script type="text/javascript" src="{{path}}/js/lib/jquery.pack.js"></script> 
+<script type="text/javascript"  src="{{path}}/js/parameter.js"></script>
+<!--  -->
+<script type="text/template" id="scopeTemplate">
+        <dd class="selected" data-type="{{=type}}" data-text="{{=min}}-{{=max}}"><a href="#">{{=min}}-{{=max}}</a></dd>
+    </script>
+</body>
+</html>
