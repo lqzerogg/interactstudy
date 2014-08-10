@@ -1,4 +1,7 @@
 {
+	"setting": {
+		"resendUrl": "/resend_email" 		
+	},
 	"header": {
 
 		"linkIndex": "xxxxx",      
@@ -18,5 +21,6 @@
 	],
 	"searcher": {
 		"linkSearch": "xxxx"           			
-	}
+	},
+	"linkEMail": "xxxxxx"   
 }
