@@ -18,7 +18,7 @@ var exports = {
 		}
 		res.set('Content-Type', 'text/json');
 
-		res.send(200, obj);
+		res.status(200).send(obj);
 	  
 	}
 }

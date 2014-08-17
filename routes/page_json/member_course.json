@@ -1,7 +1,10 @@
 {
+	"setting": {
+		"courseUrl": "/member/getCourse"			
+	},
 	"header": {
 
-		"linkIndex": "xxxxx",      
+		"linkIndex": "eeee",      
 		"linkCourse": "xxxx",      
 		"linkClassRoom": "xxxx",   
 		"linkOrganization": "xxxx",
@@ -18,5 +21,17 @@
 	],
 	"searcher": {
 		"linkSearch": "xxxx"           			
-	}
+	},
+    "leftMenu": {
+        "username": "黄小雄",
+        "fans": 55686,
+        "follow": 185,
+        "mybook": "member_course",
+        "myfav": "#",
+        "mycomment": "#",
+        "mygroup": "#",
+        "setup": "member_setup",
+        "message": "member"
+        
+    }
 }

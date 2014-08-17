@@ -4,7 +4,7 @@ var router = express.Router();
 var exports = {
 	key: '/member/message',
 	response: function(req, res) {
-		var obj = {msg: [], page: []}, i = 6;
+		var obj = {msg: [], page: ""}, i = 6;
 
 		while(i-- > 0) {
 			obj.msg.push({
@@ -19,10 +19,10 @@ var exports = {
 				delUrl: '#'
 			});
 		}
-        obj.page.push(1);
+        obj.page = '<span class="disabled">&lt;&lt;首页</span><span class="disabled">&lt;上一页</span><span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页&gt;</a><a href="#">尾页&gt;&gt;</a>';
 		res.set('Content-Type', 'text/json');
 
-		res.send(200, obj);
+		res.status(200).send(obj);
 	  
 	}
 }

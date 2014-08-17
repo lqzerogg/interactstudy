@@ -26,18 +26,17 @@
         "username": "黄小雄",
         "fans": 55686,
         "follow": 185,
-        "mybook": "member_course.html",
+        "mybook": "member_course",
         "myfav": "#",
         "mycomment": "#",
         "mygroup": "#",
-        "setup": "member_setup.html",
-        "message": "member.html"
+        "setup": "member_setup",
+        "message": "member"
         
     },
     "noticeTop": {
         "notRead": 11,
         "sysMessage": 46,
         "comment": 46
-    },
-    "path": ""
+    }
 }

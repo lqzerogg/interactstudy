@@ -1,7 +1,10 @@
 {
+	"setting": {
+		"setupUrl": "/member/setup"			
+	},
 	"header": {
 
-		"linkIndex": "xxxxx",      
+		"linkIndex": "eeee",      
 		"linkCourse": "xxxx",      
 		"linkClassRoom": "xxxx",   
 		"linkOrganization": "xxxx",
@@ -18,5 +21,31 @@
 	],
 	"searcher": {
 		"linkSearch": "xxxx"           			
-	}
+	},
+    "leftMenu": {
+        "username": "黄小雄",
+        "fans": 55686,
+        "follow": 185,
+        "mybook": "member_course",
+        "myfav": "#",
+        "mycomment": "#",
+        "mygroup": "#",
+        "setup": "member_setup",
+        "message": "member"
+    },
+    "profile": {
+        "pic": "/img/member_icon_b.png",
+        "username": "黄小雄",
+        "realname": "黄小雄",
+        "sex": 1,
+        "city": "广州市",
+        "area": "海珠区",
+        "street": "",
+        "num": "",
+        "tag": ["互联网","电子商务","程序员"],
+        "mygroup": "#",
+        "setup": "member/setup",
+        "message": "member"
+    }
+    
 }

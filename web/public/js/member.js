@@ -23,7 +23,7 @@ jQuery(function($) {
 				   ].join(''),
 		cItemTpl: [			
 			'{{~it.datas :v:i}}',
-			'<span class="disabled">&lt;&lt;首页</span><span class="disabled">&lt;上一页</span><span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页&gt;</a><a href="#">尾页&gt;&gt;</a>',
+            '{{=v}}',
 			'{{~}}'			
 		].join('')
 	}
@@ -49,7 +49,8 @@ jQuery(function($) {
 	$('#msg-list').messageList({
 		dataUrl: setting.messageUrl,
 		params: {
-			type: 'course'
+			type: 'notread',
+			page: 1
 		}
 	});
 });

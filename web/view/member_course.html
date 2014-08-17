@@ -5,8 +5,15 @@
 <title>极动教室</title>
 <meta name="Keywords" content="" />
 <meta name="Description" content="" />
-<link href="{{path}}/css/public.css" rel="stylesheet" type="text/css">
-<link href="{{path}}/css/member.css" rel="stylesheet" type="text/css">
+<link href="/css/public.css" rel="stylesheet" type="text/css">
+<link href="/css/member.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    {{#setting}}
+    var setting = {
+      "courseUrl": "{{courseUrl}}",
+    };
+    {{/setting}}
+</script>
 </head>
 <body>
 
@@ -66,44 +73,46 @@
 <!--页头结束-->
 
 <div class="member">
+  {{#leftMenu}}
   <div class="left">
     <div class="m1">
       <p><img src="/img/member_icon.png" width="120" height="120"></p>
-      <p>黄小雄</p>
+      <p>{{username}}</p>
     </div>
     <div class="m2">
       <div class="m2_l">
-        <p class="m2_t">55686</p>
+        <p class="m2_t">{{fans}}</p>
         <p>粉丝</p>
       </div>
       <div class="m2_r">
-        <p class="m2_t">185</p>
+        <p class="m2_t">{{follow}}</p>
         <p>关注</p>
       </div>
     </div>
     <div class="m3">
       <ul>
-        <li   class="m3_hover">
-          <p class="m_icon1"><a href="member_course.html">我的预约</a></p>
+        <li>
+          <p class="m_icon1"><a href="{{mybook}}">我的预约</a></p>
         </li>
         <li>
-          <p class="m_icon2"><a href="#">我的收藏</a></p>
+          <p class="m_icon2"><a href="{{myfav}}">我的收藏</a></p>
         </li>
         <li>
-          <p class="m_icon3"><a href="#">我的评论</a></p>
+          <p class="m_icon3"><a href="{{mycomment}}">我的评论</a></p>
         </li>
         <li>
-          <p class="m_icon4"><a href="#">我的社团</a></p>
+          <p class="m_icon4"><a href="{{mygroup}}">我的社团</a></p>
         </li>
         <li>
-          <p class="m_icon5"><a href="member_setup.html">个人设置</a></p>
+          <p class="m_icon5"><a href="{{setup}}">个人设置</a></p>
         </li>
-        <li>
-          <p class="m_icon6"><a href="member.html">消息公告</a></p>
+        <li  class="m3_hover">
+          <p class="m_icon6"><a href="{{message}}">消息公告</a></p>
         </li>
       </ul>
     </div>
   </div>
+  {{/leftMenu}}
   <div class="right">
     <div class="me1">
       <p class="e1">我预约的体验课程</p>
@@ -115,95 +124,9 @@
       <div class="t44">时间</div>
       <div class="t55">电话</div>
     </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
+    <div id="course-list">
     </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="wo_box">
-      <p class="wo1"><a href="#">儿童钢琴课程</a></p>
-      <p class="wo2"><a href="#">刘诗昆钢琴艺术中心</a></p>
-      <p class="wo3">2014-5-1</p>
-      <p class="wo4">10：00-11：00</p>
-      <p class="wo5">13912345678<br>
-        020-875589899</p>
-    </div>
-    <div class="digg"><span class="disabled">&lt;&lt;首页</span><span class="disabled">&lt;上一页</span><span class="current">1</span><a href="#">2</a><a href="#">3</a><a href="#">下一页&gt;</a><a href="#">尾页&gt;&gt;</a></div>
+    <div class="digg"></div>
   </div>
 </div>
 
@@ -220,5 +143,7 @@
 
 <script type="text/javascript" src="/js/lib/jquery.pack.js"></script> 
 <script type="text/javascript"  src="/js/parameter.js"></script>
+<script type="text/javascript" src="/js/lib/doT.js"></script>
+<script type="text/javascript"  src="/js/member_course.js"></script>
 </body>
 </html>

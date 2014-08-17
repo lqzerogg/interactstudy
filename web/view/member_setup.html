@@ -7,6 +7,13 @@
 <meta name="Description" content="" />
 <link href="/css/public.css" rel="stylesheet" type="text/css">
 <link href="/css/member.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+    {{#setting}}
+    var setting = {
+      "setupUrl": "{{setupUrl}}",
+    };
+    {{/setting}}
+</script>
 </head>
 <body>
 
@@ -66,51 +73,54 @@
 <!--页头结束-->
 
 <div class="member">
+  {{#leftMenu}}
   <div class="left">
     <div class="m1">
       <p><img src="/img/member_icon.png" width="120" height="120"></p>
-      <p>黄小雄</p>
+      <p>{{username}}</p>
     </div>
     <div class="m2">
       <div class="m2_l">
-        <p class="m2_t">55686</p>
+        <p class="m2_t">{{fans}}</p>
         <p>粉丝</p>
       </div>
       <div class="m2_r">
-        <p class="m2_t">185</p>
+        <p class="m2_t">{{follow}}</p>
         <p>关注</p>
       </div>
     </div>
     <div class="m3">
       <ul>
         <li>
-          <p class="m_icon1"><a href="member_course.html">我的预约</a></p>
+          <p class="m_icon1"><a href="{{mybook}}">我的预约</a></p>
         </li>
         <li>
-          <p class="m_icon2"><a href="#">我的收藏</a></p>
+          <p class="m_icon2"><a href="{{myfav}}">我的收藏</a></p>
         </li>
         <li>
-          <p class="m_icon3"><a href="#">我的评论</a></p>
+          <p class="m_icon3"><a href="{{mycomment}}">我的评论</a></p>
         </li>
         <li>
-          <p class="m_icon4"><a href="#">我的社团</a></p>
+          <p class="m_icon4"><a href="{{mygroup}}">我的社团</a></p>
+        </li>
+        <li>
+          <p class="m_icon5"><a href="{{setup}}">个人设置</a></p>
         </li>
         <li  class="m3_hover">
-          <p class="m_icon5"><a href="member_setup.html">个人设置</a></p>
-        </li>
-        <li>
-          <p class="m_icon6"><a href="member.html">消息公告</a></p>
+          <p class="m_icon6"><a href="{{message}}">消息公告</a></p>
         </li>
       </ul>
     </div>
   </div>
+  {{/leftMenu}}
   <div class="right">
     <div class="me1">
       <p class="e1">个人设置</p>
     </div>
+    {{#profile}}
     <div class="setup">
       <div class="setup_l">
-        <p class="upload"><a href="#"><img src="/img/member_icon_b.png" width="120" height="120"></a></p>
+        <p class="upload"><a href="#"><img id="pic" src="{{pic}}" width="120" height="120"></a></p>
         <p><a href="#"><img src="/img/btn_d.png" width="120" height="36"></a></p>
         <p>尺寸：500*500</p>
         <p>格式：jpg、png、gif</p>
@@ -119,38 +129,38 @@
         <div class="text_box">
           <p class="t_l">用户名：</p>
           <p class="t_c">
-            <input type="text" class="r_text" value="黄小雄">
+            <input type="text" class="r_text" id="username" value="{{username}}">
           </p>
         </div>
         <div class="text_box">
           <p class="t_l">真实姓名：</p>
           <p class="t_c">
-            <input type="text" class="r_text" value="黄小雄">
+            <input type="text" class="r_text" id="realname" value="{{realname}}">
           </p>
         </div>
         <div class="text_box">
           <p class="t_l">性别：</p>
           <p>
             <label>
-              <input name="RadioGroup1" type="radio" id="RadioGroup1_0" value="单选" checked>
+              <input name="sex" type="radio" id="RadioGroup1_0" value="单选" checked>
               男</label>
             <label>
-              <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1">
+              <input type="radio" name="sex" value="单选" id="RadioGroup1_1">
               女</label>
           </p>
         </div>
         <div class="text_box">
           <p class="t_l">地址：</p>
           <p class="t_c">
-            <select class="select_b">
-              <option>广州市</option>
+            <select class="select_b" id="city">
+              <option>{{city}}</option>
             </select>
-            <select class="select_b" name="">
-              <option>海珠区</option>
+            <select class="select_b" name="" id="area">
+              <option>{{area}}</option>
             </select>
-            <input name="input" type="text" class="r_text" style="width:80px">
+            <input name="input" type="text" id="street" class="r_text" value="{{street}}" style="width:80px">
             路（街）
-            <input name="input" type="text" class="r_text"  style="width:80px">
+            <input name="input" type="text" id="num" class="r_text" value="{{num}}"  style="width:80px">
             号 </p>
         </div>
         <div class="text_box">
@@ -159,7 +169,7 @@
             <div class="plus-tag tagbtn clearfix" id="myTags"><a value="-1" title="互联网" href="javascript:void(0);"><span>互联网</span><em></em></a><a value="-1" title="电子商务" href="javascript:void(0);"><span>电子商务</span><em></em></a><a value="-1" title="程序员" href="javascript:void(0);"><span>程序员</span><em></em></a></div>
             <div class="plus-tag-add">
               <p>
-                <input id="" name="" type="text" class="stext r_text" maxlength="20" placeholder="自定义：输入标签" />
+                <input id="" name="" type="text" id="tag" class="stext r_text" maxlength="20" placeholder="自定义：输入标签" />
               </p>
               <p>
                 <button type="button" style="padding:5px">添加标签</button>
@@ -179,7 +189,8 @@
         </div>
       </div>
     </div>
-    <div class="save"><a href="#"><img src="/img/btn_e.png" width="134" height="43"></a></div>
+    {{/profile}}
+    <div class="save"><a href="#" id="btn"><img src="/img/btn_e.png" width="134" height="43"></a></div>
   </div>
 </div>
 
@@ -196,5 +207,7 @@
 
 <script type="text/javascript" src="/js/lib/jquery.pack.js"></script> 
 <script type="text/javascript"  src="/js/parameter.js"></script>
+<script type="text/javascript" src="/js/lib/doT.js"></script>
+<script type="text/javascript"  src="/js/member_setup.js"></script>
 </body>
 </html>
